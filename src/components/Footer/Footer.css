@@ -1,0 +1,51 @@
+.footer {
+    color: black;
+    background: white;
+    max-width: 1440px;
+  }
+  
+  .footer__content {
+    padding: 32px 104px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer__content-social {
+    font-family: "Roboto-400";
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  .footer__content-copyright {
+    font-family: "Roboto-400";
+    color: #b6bcbf;
+    margin: 0;
+  }
+  
+  .footer__content-list {
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+  }
+  
+  .footer__content_text-container {
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+  }
+  
+  .footer__content_buttons-container {
+    display: flex;
+    gap: 24px;
+    cursor: pointer;
+  }
+  
+  .footer__content_list-text {
+    font-size: 18px;
+    font-family: "Roboto-400";
+    margin: 0;
+  }
