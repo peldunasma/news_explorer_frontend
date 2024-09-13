@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const RegisterModal = ({ handleCloseModal,handleSignUp,isOpen, switchToLogin }) => {
+const RegisterModal = ({ 
+    handleCloseModal,
+    handleSignUp,
+    isOpen, 
+    switchToLogin 
+}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUserName] = useState("");
+  const [name, setName] = useState("");
 
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -20,7 +28,7 @@ const RegisterModal = ({ handleCloseModal,handleSignUp,isOpen, switchToLogin }) 
     if (isOpen) {
       setEmail("");
       setPassword("");
-      setUserName("");
+      setName("");
     }
   }, [isOpen]);
 
@@ -28,12 +36,12 @@ const RegisterModal = ({ handleCloseModal,handleSignUp,isOpen, switchToLogin }) 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSignUp({ email, password, username });
+    handleSignUp({ email, password, name });
   };
 
   return (
     <ModalWithForm
-      title="Sign Up"
+      title="Sign up"
       onClose={handleCloseModal}
       isOpen={isOpen}
       className="register"
@@ -48,7 +56,7 @@ const RegisterModal = ({ handleCloseModal,handleSignUp,isOpen, switchToLogin }) 
           name="email"
           minLength="1"
           maxLength="30"
-          placeholder="Enter email"
+          placeholder="Email"
           value={email}
           onChange={handleEmailChange}
         />
@@ -61,7 +69,7 @@ const RegisterModal = ({ handleCloseModal,handleSignUp,isOpen, switchToLogin }) 
           name="password"
           minLength="1"
           maxLength="30"
-          placeholder="Enter password"
+          placeholder="Password"
           value={password}
           onChange={handlePasswordChange}
         />
@@ -71,16 +79,16 @@ const RegisterModal = ({ handleCloseModal,handleSignUp,isOpen, switchToLogin }) 
         <input
           className="modal__input"
           type="text"
-          name="email"
+          name="name"
           minLength="1"
           maxLength="30"
-          placeholder="Enter your username"
-          value={username}
-          onChange={handleEmailChange}
+          placeholder="Name"
+          value={name}
+          onChange={handleNameChange}
         />
       </label>
       <p className="modal__switch" onClick={switchToLogin}>
-        or Log in
+        or Sign in
       </p>
     </ModalWithForm>
   );

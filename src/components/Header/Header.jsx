@@ -1,10 +1,20 @@
 import "./Header.css";
 import Navigation from "../Navigation/Navigation";
 
-const Header = () => {
+const Header = ({
+  handleSignUp,
+  handleLogin,
+  isLoggedIn,
+  handleLogout
+}) => {
   return (
     <header className="header">
-      <Navigation />
+      <Navigation
+      handleSignUp={handleSignUp}
+      handleLogin={handleLogin}
+      isLoggedIn={isLoggedIn}
+      handleLogout={handleLogout}
+       />
     </header>
   );
 };
