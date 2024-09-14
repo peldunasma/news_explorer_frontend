@@ -13,7 +13,7 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 // Contexts
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
