@@ -8,6 +8,8 @@ const ModalWithForm = ({
   name,
   isOpen, 
   onSubmit,
+  spanText,
+  popupSwitch,
 }) => {
   return (
     <div className={`modal modal_type_${name} ${isOpen ? " modal__opened" : ""}`}>
@@ -26,6 +28,13 @@ const ModalWithForm = ({
           <button className="modal__submit-button" type="submit">
             {buttonText}
             </button>
+            <p
+              onClick={popupSwitch}
+              type="text"
+              className="modal__switch"
+            >
+              or {spanText}
+            </p>
         </form>
       </div>
     </div>

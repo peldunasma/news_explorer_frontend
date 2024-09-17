@@ -45,8 +45,10 @@ const RegisterModal = ({
       onClose={handleCloseModal}
       isOpen={isOpen}
       className="register"
-      onSubmit={handleSubmit}
       buttonText="Sign Up"
+      spanText="Sign In"
+      popupSwitch={switchToLogin}
+      onSubmit={handleSubmit}
     >
       <label className="modal__label">
         Email
@@ -87,9 +89,6 @@ const RegisterModal = ({
           onChange={handleNameChange}
         />
       </label>
-      <p className="modal__switch" onClick={switchToLogin}>
-        or Sign in
-      </p>
     </ModalWithForm>
   );
 };
