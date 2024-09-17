@@ -50,7 +50,7 @@ const LoginModal = ({
         />
       </label>
       <label className="modal__label">
-        Password*
+        Password
         <input
           className="modal__input"
           type="text"

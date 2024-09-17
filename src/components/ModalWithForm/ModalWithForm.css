@@ -27,19 +27,18 @@
 }
 
 .modal__close-button {
+  background: transparent url("../../images/close-button.svg") center no-repeat;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  top: 20px;
-  right: 28px;
-  background-image: url(../../images/Close-button.svg);
-  width: 20px;
-  height: 20px;
-  border: none;
+  top: -45px;
+  right: -45px;
   cursor: pointer;
 }
 
 .modal__title {
   font-family: "Cabinet Grotesk", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 20px;
@@ -60,23 +59,32 @@
   font-size: 16px;
   height: 61px;
   font-family: "Roboto-500", sans-serif;
+  background-color: #2f71e5;
+  color: white;
 }
 
-.modal__submit-button:hover {
-  opacity: 0.5;
+.button_disabled {
+  background-color: #e6e8eb;
+  color: #b6bcbf;
+  cursor: not-allowed;
 }
 
-.modal__submit-button:disabled {
-  background-color: rgba(0, 0, 0, 0.3);
-  cursor: default;
+.button_enabled {
+  background-color: #2f71e5;
+  color: white;
+}
+
+.button_enabled:hover {
+  cursor: pointer;
+  background-color: #347eff;
 }
 
 .modal__label {
   display: flex;
   flex-direction: column;
-  color: black;
+  color: #2f71e5;
   font-family: "Cabinet Grotesk", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: 20px;
@@ -84,40 +92,34 @@
 }
 
 .modal__input {
-  color: rgba(0, 0, 0, 0.5);
-  font-family: "Cabinet Grotesk", Arial, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  margin-bottom: 24px;
-  border-style: none;
-  border-bottom: 1px solid black;
+  width: 100%;
+  margin: 0 0 31px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 0 10px 0;
+  font-family: "Inter-400", Arial;
+  font-size: 14px;
 }
 
-.modal__radio-button-title {
-  font-weight: bold;
-  margin-top: 5px;  
-}
-
-.modal__radio-buttons{
-  margin-bottom: 20px; 
-}
-
-.modal__radio-button {
-  height: 16px;
-  width: 16px;
-  color: rgba(0, 0, 0, 0.5);
+.modal__or-text {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin: 16px auto 0;
+  max-width: 224px;
+  padding: 0;
+  font-family: "Inter-400", Arial;
+  font-size: 14px;
+  padding-left: 160px;
 }
 
 .modal__switch {
-  margin: 0;
-  position: relative;
-  top: 32px;
-  left: 140px;
-  font-family: "Cabinet Grotesk Bold", "Arial", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 20px;
-  color: grey;
+  background: none;
+  border: none;
   cursor: pointer;
+  max-width: 224px;
+  padding: 0;
+  font-family: "Inter-400", Arial;
+  font-size: 14px;
+  color: #2f71e5;
 }

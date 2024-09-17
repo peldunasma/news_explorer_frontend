@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
-const RegisterModal = ({ 
-    handleCloseModal,
-    handleSignUp,
-    isOpen, 
-    switchToLogin 
+const RegisterModal = ({
+  handleCloseModal,
+  handleSignUp,
+  isOpen,
+  switchToLogin,
 }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+
+  const inputValues = {
+    email: "",
+    password: "",
+    username: "",
+  };
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -39,13 +46,15 @@ const RegisterModal = ({
     handleSignUp({ email, password, name });
   };
 
+  const { values, handleChange, errors, isValid, resetForm } =
+    useFormWithValidation(inputValues);
+
   return (
     <ModalWithForm
       title="Sign up"
       onClose={handleCloseModal}
       isOpen={isOpen}
       className="register"
-      buttonText="Sign Up"
       spanText="Sign In"
       popupSwitch={switchToLogin}
       onSubmit={handleSubmit}
@@ -89,6 +98,21 @@ const RegisterModal = ({
           onChange={handleNameChange}
         />
       </label>
+      {isValid ? (
+      <button 
+      className="modal__submit-button" 
+      type="submit"
+      >
+        Sign Up
+      </button>
+      ) : (
+      <button 
+      className="modal__submit-button" 
+      type="submit"
+      >
+        Sign Up
+      </button>
+      )}
     </ModalWithForm>
   );
 };

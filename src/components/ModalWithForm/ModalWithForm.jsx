@@ -2,7 +2,6 @@ import "./ModalWithForm.css";
 
 const ModalWithForm = ({
   children,
-  buttonText,
   title,
   onClose,
   name,
@@ -25,15 +24,17 @@ const ModalWithForm = ({
         className="modal__form"
         >
           {children}
-          <button className="modal__submit-button" type="submit">
-            {buttonText}
-            </button>
-            <p
+            <p className="modal__or-text">
+            <>
+              or
+            <button
               onClick={popupSwitch}
               type="text"
               className="modal__switch"
             >
-              or {spanText}
+              {spanText}
+              </button>
+              </>
             </p>
         </form>
       </div>
