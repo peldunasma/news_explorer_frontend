@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
+
+const inputValues = ({
+  email: "",
+  password: "",
+})
 
 const LoginModal = ({
   handleCloseModal,
@@ -7,22 +13,15 @@ const LoginModal = ({
   isOpen,
   switchToSignup
 }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
- 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ email, password });
   };
+
+
+  const { values, handleChange, errors, isValid, resetForm } =
+    useFormWithValidation(inputValues);
 
   return (
     <ModalWithForm
@@ -45,8 +44,8 @@ const LoginModal = ({
           minLength="1"
           maxLength="30"
           placeholder="Email"
-          value={email}
-          onChange={handleEmailChange}
+          value={values.email}
+          onChange={handleChange}
         />
       </label>
       <label className="modal__label">
@@ -58,10 +57,26 @@ const LoginModal = ({
           minLength="1"
           maxLength="30"
           placeholder="Password"
-          value={password}
-          onChange={handlePasswordChange}
+          value={values.password}
+          required
+          onChange={handleChange}
         />
       </label>
+      {isValid ? (
+      <button 
+      className="modal__submit-button button_enabled" 
+      type="submit"
+      >
+        Sign In
+      </button>
+      ) : (
+      <button 
+      className="modal__submit-button button_disabled" 
+      type="submit"
+      >
+        Sign In
+      </button>
+      )}
     </ModalWithForm>
   );
 };

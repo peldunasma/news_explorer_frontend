@@ -6,11 +6,15 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
+import SuccessModal from "../SuccessModal/SuccessModal";
 import Main from "../Main/Main";
 
 // Hooks and Routes
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+
+//Utils
+import auth from "../../utils/auth";
 
 // Contexts
 import { CurrentUserContext } from "../../context/CurrentUserContext";
@@ -21,7 +25,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState({
     name: "",
     email: "",
-    avatar: "",
     _id: "",
   });
 
@@ -39,22 +42,27 @@ function App() {
     setActiveModal("");
   };
 
+  const handleSuccessModal = () => {
+    setActivePopup("success");
+  };
+
   const handleEditPopup = () => {
     setActivePopup("edit");
   };
 
   //Authorization Handlers
 
-  const handleSignUp = ({ email, password, name, avatar }) => {
+  const handleSignUp = ({ email, password, username }) => {
     if (!email || !password) {
       return alert("Please enter an email and password");
     }
     auth
-      .signUp({ email, password, name, avatar })
+      .signUp({ email, password, username })
       .then(() => {
-        handleSignUpModal({ email, password, name, avatar });
+        handleSignUpModal({ email, password, username });
+        handleSuccessModal();
         handleCloseModal();
-        setCurrentUser({ email, password, name, avatar });
+        setCurrentUser({ email, password, username });
         setIsLoggedIn(true);
       })
       .catch((err) => console.log(err));
@@ -88,7 +96,6 @@ function App() {
     localStorage.removeItem("jwt");
   };
 
-
   // useEffect APIs
   useEffect(() => {
     if (!activeModal) return; // stop the effect not to add the listener if there is no active modal
@@ -109,16 +116,27 @@ function App() {
     <>
       <CurrentUserContext.Provider value={currentUser}>
         <div className="page">
-          {<Header
-            handleSignUp={handleSignUpModal}
-            handleLogin={handleLoginModal}
-            isLoggedIn={isLoggedIn}
-            handleLogout={handleLogout}
-          /> }
           <Routes>
-            <Route path="/" element={<Main openPopup={handleLogin} />} />
+            <Route
+              exact
+              path="/"
+              element={
+                <>
+                  <Header
+                    handleSignUp={handleSignUpModal}
+                    handleLogin={handleLoginModal}
+                    isLoggedIn={isLoggedIn}
+                    handleLogout={handleLogout}
+                    openPopup={handleLogin}
+                  />
+                  <Main 
+                  openPopup={handleLogin} 
+                  isLoggedIn={isLoggedIn}
+                  />
+                </>
+              }
+            />
           </Routes>
-          {/* <About /> */}
           <Footer />
           {activeModal === "login" && (
             <LoginModal
@@ -134,6 +152,14 @@ function App() {
               handleSignUp={handleSignUp}
               isOpen={activeModal === "signup"}
               switchToLogin={handleSwitch}
+              handleSuccessModal={handleSuccessModal}
+            />
+          )}
+          {activeModal === "success" && (
+            <SuccessModal
+              handleCloseModal={handleCloseModal}
+              handleLogin={handleLoginModal}
+              isOpen={activeModal === "success"}
             />
           )}
         </div>
