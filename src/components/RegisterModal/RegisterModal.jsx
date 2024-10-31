@@ -42,7 +42,7 @@ const RegisterModal = ({
           name="email"
           minLength="1"
           maxLength="30"
-          placeholder="Email"
+          placeholder="Enter email"
           value={values.email}
           onChange={handleChange}
         />
@@ -52,11 +52,11 @@ const RegisterModal = ({
         <input
           required
           className="modal__input"
-          type="text"
+          type="PASSWORD"
           name="password"
           minLength="1"
           maxLength="30"
-          placeholder="Password"
+          placeholder="Enter password"
           value={values.password}
           onChange={handleChange}
         />
@@ -69,7 +69,7 @@ const RegisterModal = ({
           name="username"
           minLength="1"
           maxLength="30"
-          placeholder="username"
+          placeholder="Enter your username"
           value={values.username}
           required
           onChange={handleChange}

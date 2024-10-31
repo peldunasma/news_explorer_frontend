@@ -9,7 +9,6 @@ const SuccessModal = ({ isOpen, handleCloseModal, handleLogin }) => {
       isOpen={isOpen}
       handleLogin={handleLogin}
       spanText="Sign In"
-      handleCloseModal={handleCloseModal}
       orText={orText}
     ></ModalWithForm>
   );

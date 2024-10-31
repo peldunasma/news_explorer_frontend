@@ -8,6 +8,8 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import SuccessModal from "../SuccessModal/SuccessModal";
 import Main from "../Main/Main";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import SavedNews from "../SavedNews/SavedNews";
 
 // Hooks and Routes
 import { useState, useEffect } from "react";
@@ -18,6 +20,7 @@ import auth from "../../utils/auth";
 
 // Contexts
 import { CurrentUserContext } from "../../context/CurrentUserContext";
+
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -60,8 +63,8 @@ function App() {
       .signUp({ email, password, username })
       .then(() => {
         handleSignUpModal({ email, password, username });
-        handleSuccessModal();
         handleCloseModal();
+        handleSuccessModal();
         setCurrentUser({ email, password, username });
         setIsLoggedIn(true);
       })
@@ -135,6 +138,18 @@ function App() {
                   />
                 </>
               }
+            />
+            <Route
+            path="/saved-news"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <SavedNews
+              isLoggedIn={isLoggedIn}
+              handleLogout={handleLogout}
+              openPopup={handleLogin}
+              />
+              </ProtectedRoute>
+            }
             />
           </Routes>
           <Footer />
