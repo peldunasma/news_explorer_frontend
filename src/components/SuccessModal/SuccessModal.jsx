@@ -8,6 +8,7 @@ const SuccessModal = ({ isOpen, handleCloseModal, handleLogin }) => {
       title="Registration successfully completed!"
       isOpen={isOpen}
       handleLogin={handleLogin}
+      handleCloseModal={handleCloseModal}
       spanText="Sign In"
       orText={orText}
     ></ModalWithForm>

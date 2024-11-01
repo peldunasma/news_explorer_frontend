@@ -16,7 +16,7 @@ const LoginModal = ({
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ email, password });
+    onSubmit(inputValues);
   };
 
 

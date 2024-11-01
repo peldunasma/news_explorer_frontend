@@ -59,7 +59,14 @@
   
 //   export default auth;
 
-export const login = (email, password) => {
+ import { checkResponse } from "./NewsApi";
+
+ const baseUrl = (process.env.NODE_ENV === "production"
+  ? "https://api-newsexplorer.utdnews.com"
+  : "http://localhost:3001");
+
+
+export const signUp = (email, password) => {
   // Pretend we did a fetch request that gave us back a token
   return new Promise((resolve, reject) => {
     resolve({ token: "a fake token" });
@@ -74,3 +81,10 @@ export const checkToken = (token) => {
     });
   });
 };
+
+   const auth = {
+    signUp,
+    checkToken,
+   };
+
+export default auth;

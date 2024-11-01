@@ -24,6 +24,7 @@ import { CurrentUserContext } from "../../context/CurrentUserContext";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
+  const [user, setUser] = useState({});
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({
     name: "",
@@ -46,11 +47,11 @@ function App() {
   };
 
   const handleSuccessModal = () => {
-    setActivePopup("success");
+    setActiveModal("success");
   };
 
   const handleEditPopup = () => {
-    setActivePopup("edit");
+    setActiveModal("edit");
   };
 
   //Authorization Handlers
@@ -73,7 +74,7 @@ function App() {
 
   const handleLogin = ({ email, password }) => {
     auth
-      .login({ email, password })
+      .signUp({ email, password })
       .then((res) => {
         handleLoginModal({ email, password });
         localStorage.setItem("jwt", res.token);
@@ -100,6 +101,7 @@ function App() {
   };
 
   // useEffect APIs
+  
   useEffect(() => {
     if (!activeModal) return; // stop the effect not to add the listener if there is no active modal
     const handleEscClose = (e) => {
