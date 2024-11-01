@@ -25,7 +25,7 @@ import { CurrentUserContext } from "../../context/CurrentUserContext";
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [user, setUser] = useState({});
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [currentUser, setCurrentUser] = useState({
     name: "",
     email: "",
@@ -66,7 +66,7 @@ function App() {
         handleSignUpModal({ email, password, username });
         handleCloseModal();
         handleSuccessModal();
-        setCurrentUser({ email, password, username });
+        setUser(res);
         setIsLoggedIn(true);
       })
       .catch((err) => console.log(err));
@@ -81,7 +81,7 @@ function App() {
         return auth.checkToken(res.token);
       })
       .then((user) => {
-        setCurrentUser(user);
+        setUser(res);
         handleCloseModal();
         setIsLoggedIn(true);
       })
