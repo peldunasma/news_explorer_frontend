@@ -24,10 +24,9 @@ import { CurrentUserContext } from "../../context/CurrentUserContext";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
-  const [user, setUser] = useState({});
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({
-    name: "",
+    username: "",
     email: "",
     _id: "",
   });
@@ -63,10 +62,10 @@ function App() {
     auth
       .signUp({ email, password, username })
       .then(() => {
-        handleSignUpModal({ email, password, username });
+        handleSignUpModal({ email, password, username});
         handleCloseModal();
         handleSuccessModal();
-        setUser(res);
+        setCurrentUser({ email, password, username});
         setIsLoggedIn(true);
       })
       .catch((err) => console.log(err));
@@ -81,7 +80,7 @@ function App() {
         return auth.checkToken(res.token);
       })
       .then((user) => {
-        setUser(res);
+        setCurrentUser(user);
         handleCloseModal();
         setIsLoggedIn(true);
       })
@@ -95,7 +94,7 @@ function App() {
   };
 
   const handleLogout = () => {
-    setUser(null);
+    setCurrentUser(null);
     setIsLoggedIn(false);
     localStorage.removeItem("jwt");
   };
