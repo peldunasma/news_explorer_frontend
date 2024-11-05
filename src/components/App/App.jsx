@@ -26,7 +26,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({
-    username: "",
+    name: "",
     email: "",
     _id: "",
   });
@@ -55,17 +55,17 @@ function App() {
 
   //Authorization Handlers
 
-  const handleSignUp = ({ email, password, username }) => {
+  const handleSignUp = ({ email, password, name }) => {
     if (!email || !password) {
       return alert("Please enter an email and password");
     }
     auth
-      .signUp({ email, password, username })
+      .signUp({ email, password, name })
       .then(() => {
-        handleSignUpModal({ email, password, username});
+        handleSignUpModal({ email, password, name});
         handleCloseModal();
         handleSuccessModal();
-        setCurrentUser({ email, password, username});
+        setCurrentUser({ email, password, name});
         setIsLoggedIn(true);
       })
       .catch((err) => console.log(err));
@@ -79,8 +79,8 @@ function App() {
         localStorage.setItem("jwt", res.token);
         return auth.checkToken(res.token);
       })
-      .then((user) => {
-        setCurrentUser(user);
+      .then(({data}) => {
+        setCurrentUser(data);
         handleCloseModal();
         setIsLoggedIn(true);
       })

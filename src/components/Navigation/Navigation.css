@@ -58,6 +58,11 @@
     gap: 15px;
   }
 
+  .nav__button-logout-icon {
+    width: 18px;
+    height: 16px;
+  }
+
   .nav__outline {
     width: 70px;
     border-bottom: 2px solid white;
