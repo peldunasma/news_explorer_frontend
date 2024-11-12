@@ -1,7 +1,6 @@
 import "./App.css";
 
 // Components
-import About from "../About/About";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import RegisterModal from "../RegisterModal/RegisterModal";
