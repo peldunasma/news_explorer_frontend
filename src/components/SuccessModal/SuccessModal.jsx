@@ -1,17 +1,21 @@
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState } from "react";
+import "./SuccessModal.css";
+import PopupForm from "../PopupForm/PopupForm";
 
-const SuccessModal = ({ isOpen, handleCloseModal, handleLogin }) => {
-  const [orText, setOrText] = useState(false);
+const SuccessModal = ({
+  isOpen,
+  handleCloseModal,
+  handleLogin,
+}) => {
   return (
-    <ModalWithForm
+    <PopupForm
       title="Registration successfully completed!"
       isOpen={isOpen}
-      handleLogin={handleLogin}
-      handleCloseModal={handleCloseModal}
-      spanText="Sign In"
-      orText={orText}
-    ></ModalWithForm>
+      onClose={handleCloseModal}
+    >
+      <button className="success-modal__sign-in" onClick={handleLogin}>
+        Sign In
+      </button>
+    </PopupForm>
   );
 };
 

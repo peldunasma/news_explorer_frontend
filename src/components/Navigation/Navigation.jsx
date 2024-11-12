@@ -5,7 +5,6 @@ import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useContext } from "react";
 
 const Navigation = ({
-  handleSignUp,
   handleLogin,
   isLoggedIn,
   handleLogout,
@@ -42,7 +41,7 @@ const Navigation = ({
               className="nav__button-logout"
               onClick={handleLogout}
             >
-              {currentUser?.username}
+              {currentUser?.name}
               <img
                 src={logout_light}
                 className="nav__button-logout-icon"

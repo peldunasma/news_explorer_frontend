@@ -24,12 +24,10 @@
   position: relative;
   max-height: 436px;
   height: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .modal__close-button {
   background: transparent url("../../images/close-button.svg") center no-repeat;
-  width: 40px;
   height: 40px;
   position: absolute;
   top: -45px;
@@ -40,8 +38,6 @@
 .modal__title {
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
   line-height: 20px;
   margin-top: 28px;
   margin-left: 28px;
@@ -54,14 +50,9 @@
 
 .modal__submit-button {
   width: 100%;
-  padding: 8px 16px;
-  border: none;
   border-radius: 25px;
-  font-size: 16px;
   height: 64px;
   font-family: "Roboto-500", sans-serif;
-  background-color: #2f71e5;
-  color: white;
 }
 
 .button_disabled {
@@ -123,3 +114,6 @@
   font-size: 14px;
   color: #2f71e5;
 }
+
+
+

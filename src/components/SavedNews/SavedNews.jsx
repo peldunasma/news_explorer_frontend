@@ -1,14 +1,14 @@
 import "./SavedNews.css";
 import Navigation from "../Navigation/Navigation";
 import { useContext, useEffect } from "react";
+import { UserContext } from "../../context/UserContext";
+import { SavedArticleContext } from "../../context/SavedArticleContext";
+import { getArticles } from "../../utils/article-api";
 const SavedNews = ({
-  loggedIn,
+  isLoggedIn,
   isSavedNews,
-  openPopup,
   handleLogout,
-  handleEditPopup,
   handleUnsaveArticle,
-  handleConfirmPopup,
   keyword,
 }) => {
   const currentUser = useContext(UserContext);
@@ -87,15 +87,13 @@ const SavedNews = ({
     <section className="saved">
       <header className="saved__header">
         <Navigation
-          loggedIn={loggedIn}
+          isLoggedIn={isLoggedIn}
           isSavedNews={isSavedNews}
-          openPopup={openPopup}
           handleLogout={handleLogout}
-          handleEditPopup={handleEditPopup}
         />
         <div className="saved__text-container">
           <p className="saved__text-subtitle">Saved Articles</p>
-          <h1 className="saved__text-title">{`${currentUser?.username}, you have ${userArticleFilter.length} saved articles`}</h1>
+          <h1 className="saved__text-title">{`${currentUser?.name}, you have ${userArticleFilter.length} saved articles`}</h1>
           <p className="saved__text-keywords">
             By keywords:
             <span className="saved__text-span"> {keywordString}</span>
@@ -103,10 +101,9 @@ const SavedNews = ({
         </div>
       </header>
       <NewsCardList
-        loggedIn={loggedIn}
+        isLoggedIn={isLoggedIn}
         isSavedNews={isSavedNews}
         handleUnsaveArticle={handleUnsaveArticle}
-        handleConfirmPopup={handleConfirmPopup}
         keyword={keyword}
       />
     </section>

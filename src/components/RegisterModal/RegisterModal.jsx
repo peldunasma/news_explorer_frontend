@@ -5,7 +5,7 @@ import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 const inputValues = {
   email: "",
   password: "",
-  username: "",
+  name: "",
 };
 
 const RegisterModal = ({

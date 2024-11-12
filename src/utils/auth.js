@@ -66,14 +66,19 @@
   : "http://localhost:3001");
 
 
-export const signUp = (email, password, username) => {
+export const signUp = (email, password, name) => {
   // Pretend we did a fetch request that gave us back a token
   return new Promise((resolve, reject) => {
     resolve({ token: "a fake token" });
   });
 };
 
-export const login = (email, password) => {};
+export const login = (email, password, name) => {
+  // Pretend we did a fetch request that gave us back a token
+  return new Promise((resolve, reject) => {
+    resolve({ token: "a fake token" });
+  });
+};
 
 export const checkToken = (token) => {
   // Pretend we did a fetch request that gave us back a user
@@ -87,7 +92,7 @@ export const checkToken = (token) => {
    const auth = {
     signUp,
     checkToken,
-    login, 
+    login
    };
 
 export default auth;

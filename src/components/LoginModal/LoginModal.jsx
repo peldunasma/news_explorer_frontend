@@ -2,25 +2,23 @@ import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
-const inputValues = ({
+const inputValues = {
   email: "",
   password: "",
-})
+};
 
 const LoginModal = ({
   handleCloseModal,
   onSubmit,
   isOpen,
-  switchToSignup
+  switchToSignup,
 }) => {
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(inputValues);
   };
 
-
-  const { values, handleChange, errors, isValid, resetForm } =
+  const { values, handleChange, isValid, resetForm } =
     useFormWithValidation(inputValues);
 
   return (
@@ -33,7 +31,6 @@ const LoginModal = ({
       spanText="Sign Up"
       popupSwitch={switchToSignup}
       onSubmit={handleSubmit}
-
     >
       <label className="modal__label">
         Email
@@ -63,19 +60,13 @@ const LoginModal = ({
         />
       </label>
       {isValid ? (
-      <button 
-      className="modal__submit-button button_enabled" 
-      type="submit"
-      >
-        Sign In
-      </button>
+        <button className="modal__submit-button button_enabled" type="submit">
+          Sign In
+        </button>
       ) : (
-      <button 
-      className="modal__submit-button button_disabled" 
-      type="submit"
-      >
-        Sign In
-      </button>
+        <button className="modal__submit-button button_disabled" type="submit">
+          Sign In
+        </button>
       )}
     </ModalWithForm>
   );

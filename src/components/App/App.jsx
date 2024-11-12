@@ -20,11 +20,20 @@ import auth from "../../utils/auth";
 
 // Contexts
 import { CurrentUserContext } from "../../context/CurrentUserContext";
+import { SavedArticleContext } from "../../context/SavedArticleContext";
+import { ArticleContext } from "../../context/ArticleContext";
 
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [articles, setArticles] = useState([]);
+  const [shownArticles, setShownArticles] = useState(3);
+  const [isSavedNews, setIsSavedNews] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [searching, setSearching] = useState(false);
+  const [keyword, setKeyword] = useState([]);
+  const [savedArticles, setSavedArticles] = useState([]);
   const [currentUser, setCurrentUser] = useState({
     name: "",
     email: "",
@@ -49,8 +58,8 @@ function App() {
     setActiveModal("success");
   };
 
-  const handleEditPopup = () => {
-    setActiveModal("edit");
+  const showMoreArticles = () => {
+    setShownArticles((prev) => prev + 3);
   };
 
   //Authorization Handlers
@@ -99,6 +108,54 @@ function App() {
     localStorage.removeItem("jwt");
   };
 
+  const handleSearchResults = (query) => {
+    searchNews(query)
+      .then((data) => {
+        setSearching(true);
+        setTimeout(() => {
+          const filteredArticles = data.articles.filter(
+            (article) =>
+              article.urlToImage &&
+              article.title &&
+              !article.title.includes("[Removed]")
+          );
+          setArticles(filteredArticles);
+          setIsLoading(false);
+        }, 500);
+        setKeyword(query);
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(
+          "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later."
+        );
+      });
+  };
+
+  const handleSaveArticle = ({ article }, keyword) => {
+    const token = localStorage.getItem("jwt");
+    saveArticle({ article }, token, keyword)
+      .then((savedArticles) => {
+        setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleUnsaveArticle = (article) => {
+    const token = localStorage.getItem("jwt");
+    unsaveArticle(article._id, token)
+      .then(() => {
+        const postUnsave = savedArticles.filter((card) => {
+          return card._id !== article._id;
+        });
+        setSavedArticles(postUnsave);
+        handleClosePopup();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   // useEffect APIs
   
   useEffect(() => {
@@ -119,6 +176,12 @@ function App() {
   return (
     <>
       <CurrentUserContext.Provider value={currentUser}>
+      <ArticleContext.Provider
+          value={{ articles, setArticles, shownArticles, setShownArticles }}
+        >
+      <SavedArticleContext.Provider
+            value={{ savedArticles, setSavedArticles }}
+          >
         <div className="page">
           <Routes>
             <Route
@@ -129,13 +192,22 @@ function App() {
                   <Header
                     handleSignUp={handleSignUpModal}
                     handleLogin={handleLoginModal}
+                    handleSubmit={handleSearchResults}
                     isLoggedIn={isLoggedIn}
                     handleLogout={handleLogout}
                     openPopup={handleLogin}
+                    setArticles={setArticles}
+                    setIsLoading={setIsLoading}
+                    setSearching={setSearching}
                   />
                   <Main 
+                  articles={articles}
                   openPopup={handleLogin} 
                   isLoggedIn={isLoggedIn}
+                  isLoading={isLoading}
+                  searching={searching}
+                  showMoreArticles={showMoreArticles}
+                  handleSaveArticle={handleSaveArticle}
                   />
                 </>
               }
@@ -146,14 +218,17 @@ function App() {
               <ProtectedRoute isLoggedIn={isLoggedIn}>
               <SavedNews
               isLoggedIn={isLoggedIn}
+              isSavedNews={true}
+              savedArticles={savedArticles}
               handleLogout={handleLogout}
-              openPopup={handleLogin}
+              keyword={keyword}
+              handleUnsaveArticle={handleUnsaveArticle}
               />
               </ProtectedRoute>
             }
             />
           </Routes>
-          <Footer />
+          <Footer isSavedNews={isSavedNews}/>
           {activeModal === "login" && (
             <LoginModal
               handleCloseModal={handleCloseModal}
@@ -174,11 +249,14 @@ function App() {
           {activeModal === "success" && (
             <SuccessModal
               handleCloseModal={handleCloseModal}
-              handleLogin={handleLoginModal}
+              switchToLogin={handleSwitch}
               isOpen={activeModal === "success"}
+              handleLogin={handleLogin}
             />
           )}
         </div>
+        </SavedArticleContext.Provider>
+        </ArticleContext.Provider>
       </CurrentUserContext.Provider>
     </>
   );
