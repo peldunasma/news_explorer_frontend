@@ -1,7 +1,8 @@
 import "./NewsCardList.css";
 import { useContext } from "react";
-import { UserContext } from "../../contexts/UserContext";
-import { SavedArticleContext } from "../../contexts/SavedArticleContext";
+import { UserContext } from "../../context/UserContext";
+import { ArticleContext } from "../../context/ArticleContext";
+import { SavedArticleContext } from "../../context/SavedArticleContext";
 import { useLocation } from "react-router-dom";
 import Preloader from "../Preloader/Preloader";
 

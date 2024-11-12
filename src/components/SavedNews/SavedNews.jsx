@@ -1,5 +1,6 @@
 import "./SavedNews.css";
 import Navigation from "../Navigation/Navigation";
+import NewsCardList from "../NewsCardList/NewsCardList";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext";
 import { SavedArticleContext } from "../../context/SavedArticleContext";
