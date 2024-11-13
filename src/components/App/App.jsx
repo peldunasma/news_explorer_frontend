@@ -218,6 +218,7 @@ function App() {
               <SavedNews
               isLoggedIn={isLoggedIn}
               isSavedNews={true}
+              openPopup={handleSignUpModal}
               savedArticles={savedArticles}
               handleLogout={handleLogout}
               keyword={keyword}

@@ -1,7 +1,7 @@
 import { Navigate } from "react-router-dom";
 
-const ProtectedRoute = ({ loggedIn, children }) => {
-  if (!loggedIn) {
+const ProtectedRoute = ({ isLoggedIn, children }) => {
+  if (!isLoggedIn) {
     // alert("You are not logged in, returning to home page.");
     return <Navigate to="/" replace />;
   }

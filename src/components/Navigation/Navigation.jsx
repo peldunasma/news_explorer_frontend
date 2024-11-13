@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import logout_light from "../../images/logout_light.svg";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useContext } from "react";
+import NavigationSaved from "../NavigationSaved/NavigationSaved";
 
 const Navigation = ({
   handleLogin,
   isLoggedIn,
   handleLogout,
+  handleEditPopup,
 }) => {
 
   const currentUser = useContext(CurrentUserContext);
@@ -67,6 +69,13 @@ const Navigation = ({
             )}
           </div>
      </nav>
+     ) : (
+      // SAVED NEWS NAV BAR (DARK MODE)
+      <NavigationSaved
+        handleLogout={handleLogout}
+        handleEditPopup={handleEditPopup}
+      />
+    )}
   );
 };
 
