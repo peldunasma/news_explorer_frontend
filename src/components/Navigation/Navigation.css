@@ -12,6 +12,11 @@
     display: flex;
     gap: 50px;
   }
+
+  .nav__buttons-saved{
+    display: flex;
+    gap: 50px;
+  }
   
   .nav__title {
     font-size: 20px;
@@ -68,6 +73,15 @@
     border-bottom: 2px solid white;
     position: absolute;
     top: 67px;
+  }
+
+  .nav__outline-black {
+    width: 150px;
+    border-bottom: 2px solid black;
+    outline: none;
+    position: absolute;
+    bottom: -13px;
+    left: 65px;
   }
   
   .nav__button-saved {

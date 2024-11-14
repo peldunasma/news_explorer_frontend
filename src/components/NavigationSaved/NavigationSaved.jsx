@@ -1,56 +1,68 @@
 import "../Navigation/Navigation.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import logout_dark from "../../images/logout_dark.svg";
 import { UserContext } from "../../context/UserContext";
 
-const NavigationSaved = ({ handleLogout, handleEditPopup }) => {
+const NavigationSaved = ({ handleLogout, handleEditPopup, isLoggedIn, handleLogin}) => {
   const currentUser = useContext(UserContext);
   return (
-    <>
-      <nav
-        className="nav__content"
+        <nav className="nav"
         style={{ borderBottom: "0.5px solid", borderColor: "#1a1b22" }}
-      >
-        <h2 className="nav__title" style={{ color: "#1a1b22" }}>
-          NewsExplorer
-        </h2>
-        <div className="nav__buttons" style={{ gap: "15px" }}>
-          <button type="text" className="nav__button">
-            <Link to="/" style={{ textDecoration: "none", color: "#1a1b22" }}>
-              Home
-            </Link>
-          </button>
-          <hr className="nav__outline-black" />
-          <button
-            type="text"
-            className="nav__button-saved"
-            style={{ color: "#1a1b22" }}
-          >
-            Saved Articles
-          </button>
-          <button
-            className="nav__button"
-            style={{ textDecoration: "none", color: "#1a1b22", width: "100px" }}
-            type="text"
-            onClick={handleEditPopup}
-          >
-            Edit Profile
-          </button>
-          <Link to="/" style={{ textDecoration: "none", color: "#1a1b22" }}>
-            <button
-              type="text"
-              className="nav__button-logout dark"
-              onClick={handleLogout}
-            >
-              {currentUser?.username}
-              <img src={logout_dark} className="nav__button-logout-icon" />
-            </button>
+        >
+          <Link to="/">
+            <h2 className="nav__title" style={{ color: "#1a1b22" }}>NewsExplorer</h2>
           </Link>
-        </div>
-      </nav>
-    </>
-  );
-};
+          <div className="nav__buttons">
+            {isLoggedIn ? (
+              <>
+                  <button 
+                  className="nav__button-home" style={{ textDecoration: "none", color: "#1a1b22" }}>
+                    Home
+                  </button>
+                <hr className="nav__outline-black"/>
+                <button type="text" className="nav__button-saved"style={{ color: "#1a1b22" }}>
+                  <Link
+                    to="/saved-news"
+                    style={{
+                      textDecoration: "none",
+                      color: "black",
+                    }}
+                  >
+                    Saved Articles
+                  </Link>
+                </button>
+                <button
+                  type="text"
+                  className="nav__button-logout"
+                  onClick={handleLogout}
+                >
+                  {currentUser?.name}
+                  <img
+                    src={logout_light}
+                    className="nav__button-logout-icon"
+                    alt="Logout Icon"
+                  />
+                </button>
+              </> 
+            ) : (
+              <>
+              <div className="nav__buttons">
+                      <button type="text" className="nav__button-home">
+                        Home
+                      </button>
+                      <hr className="nav__outline" />
+                      <button 
+                      className="nav__button-login" 
+                      onClick={handleLogin}
+                      >
+                        Sign In
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
+         </nav>
+      );
+    };
 
 export default NavigationSaved;

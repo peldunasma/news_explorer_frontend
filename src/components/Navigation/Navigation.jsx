@@ -22,6 +22,10 @@ const Navigation = ({
       <div className="nav__buttons">
         {isLoggedIn ? (
           <>
+        <NavigationSaved
+          handleLogout={handleLogout}
+          handleEditPopup={handleEditPopup}
+        />
               <button 
               className="nav__button-home">
                 Home
@@ -69,13 +73,6 @@ const Navigation = ({
             )}
           </div>
      </nav>
-     ) : (
-      // SAVED NEWS NAV BAR (DARK MODE)
-      <NavigationSaved
-        handleLogout={handleLogout}
-        handleEditPopup={handleEditPopup}
-      />
-    )}
   );
 };
 
