@@ -1,5 +1,5 @@
 import "./Navigation.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logout_light from "../../images/logout_light.svg";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useContext } from "react";
@@ -12,67 +12,75 @@ const Navigation = ({
   handleEditPopup,
 }) => {
 
+  const route = useLocation();
   const currentUser = useContext(CurrentUserContext);
 
   return (
-    <nav className="nav">
-      <Link to="/">
-        <h2 className="nav__title">NewsExplorer</h2>
-      </Link>
-      <div className="nav__buttons">
-        {isLoggedIn ? (
-          <>
-        <NavigationSaved
-          handleLogout={handleLogout}
-          handleEditPopup={handleEditPopup}
-        />
-              <button 
-              className="nav__button-home">
-                Home
-              </button>
-            <hr className="nav__outline" />
-            <button type="text" className="nav__button-saved">
-              <Link
-                to="/saved-news"
-                style={{
-                  textDecoration: "none",
-                  color: "white",
-                }}
-              >
-                Saved Articles
-              </Link>
-            </button>
-            <button
-              type="text"
-              className="nav__button-logout"
-              onClick={handleLogout}
-            >
-              {currentUser?.name}
-              <img
-                src={logout_light}
-                className="nav__button-logout-icon"
-                alt="Logout Icon"
-              />
-            </button>
-          </>
-        ) : (
-          <>
-          <div className="nav__buttons">
+    <>
+      <nav className="nav" >
+        {route.pathname === "/" ? (
+          // HOMEPAGE NAV BAR (LIGHT MODE)
+          <nav
+            className="nav__content"
+          >
+            <h2 className="nav__title">NewsExplorer</h2>
+            {/* Logged In Nav Bar */}
+            {isLoggedIn ? (
+              <>
+                <div className="nav__buttons">
                   <button type="text" className="nav__button-home">
                     Home
                   </button>
                   <hr className="nav__outline" />
-                  <button 
-                  className="nav__button-login" 
-                  onClick={handleLogin}
+                  <button type="text" className="nav__button-saved">
+                    <Link
+                      to="/saved-news"
+                      style={{
+                        textDecoration: "none",
+                        color: "white",
+                      }}
+                    >
+                      Saved Articles
+                    </Link>
+                  </button>
+                  <button
+                    type="text"
+                    className="nav__button-logout"
+                    onClick={handleLogout}
                   >
+                    {currentUser?.name}
+                    <img
+                      src={logout_light}
+                      className="nav__button-logout-icon"
+                      alt="Logout Icon"
+                    />
+                  </button>
+                </div>
+              </>
+            ) : (
+              // Logged Out Nav Bar
+              <>
+                <div className="nav__buttons">
+                  <button type="text" className="nav__button-home">
+                    Home
+                  </button>
+                  <hr className="nav__outline" />
+                  <button className="nav__button-login" onClick={handleLogin}>
                     Sign In
                   </button>
                 </div>
               </>
             )}
-          </div>
-     </nav>
+          </nav>
+        ) : (
+          // SAVED NEWS NAV BAR (DARK MODE)
+          <NavigationSaved
+            handleLogout={handleLogout}
+            handleEditPopup={handleEditPopup}
+          />
+        )}
+      </nav>
+    </>
   );
 };
 

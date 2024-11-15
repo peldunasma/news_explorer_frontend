@@ -1,3 +1,4 @@
+import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
@@ -5,6 +6,7 @@ import { ArticleContext } from "../../context/ArticleContext";
 import { SavedArticleContext } from "../../context/SavedArticleContext";
 import { useLocation } from "react-router-dom";
 import Preloader from "../Preloader/Preloader";
+import NotFound from "../NotFound/NotFound";
 
 const NewsCardList = ({
     loggedIn,
