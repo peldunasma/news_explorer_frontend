@@ -16,8 +16,8 @@ import { Route, Routes } from "react-router-dom";
 
 //Utils
 import auth from "../../utils/auth";
-import { getItems, savedArticle } from "../../utils/NewsApi";
-import { saveArticle, unsaveArticle } from "../../utils/article-api";
+import {searchNews} from "../../utils/NewsApi";
+import { saveArticle, unsaveArticle, getArticles } from "../../utils/article-api";
 
 // Contexts
 import { CurrentUserContext } from "../../context/CurrentUserContext";
@@ -34,6 +34,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [searching, setSearching] = useState(false);
   const [keyword, setKeyword] = useState([]);
+  const [error, setError] = useState(null);
+  const [serverError, setServerError] = useState({});
   const [savedArticles, setSavedArticles] = useState([]);
   const [currentUser, setCurrentUser] = useState({
     name: "",
@@ -78,7 +80,13 @@ function App() {
         setCurrentUser({ email, password, name});
         setIsLoggedIn(true);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setServerError({
+          ...serverError,
+          conflictError: "Email is already in use",
+        });
+        console.log(err);
+      });
   };
 
   const handleLogin = ({ email, password }) => {
@@ -94,7 +102,13 @@ function App() {
         handleCloseModal();
         setIsLoggedIn(true);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setServerError({
+          ...serverError,
+          invalidError: "Invalid credentials",
+        });
+      });
   };
 
   const handleSwitch = () => {
@@ -209,6 +223,7 @@ function App() {
                   searching={searching}
                   showMoreArticles={showMoreArticles}
                   handleSaveArticle={handleSaveArticle}
+                  error={error}
                   />
                 </>
               }
@@ -237,6 +252,8 @@ function App() {
               onSubmit={handleLogin}
               isOpen={activeModal === "login"}
               switchToSignup={handleSwitch}
+              serverError={serverError}
+              setServerError={setServerError}
             />
           )}
           {activeModal === "signup" && (
@@ -246,6 +263,8 @@ function App() {
               isOpen={activeModal === "signup"}
               switchToLogin={handleSwitch}
               handleSuccessModal={handleSuccessModal}
+              serverError={serverError}
+              setServerError={setServerError}
             />
           )}
           {activeModal === "success" && (
@@ -254,6 +273,8 @@ function App() {
               switchToLogin={handleSwitch}
               isOpen={activeModal === "success"}
               handleLogin={handleLogin}
+              serverError={serverError}
+              setServerError={setServerError}
             />
           )}
         </div>

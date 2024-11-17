@@ -1,8 +1,8 @@
-import { checkResponse } from "./NewsApi";
+// import { checkResponse } from "./NewsApi";
 
- const baseUrl = process.env.NODE_ENV === "production"
-  ? "https://api-newsexplorer.utdnews.com"
-  : "http://localhost:3001";
+//  const baseUrl = process.env.NODE_ENV === "production"
+//   ? "https://api-newsexplorer.utdnews.com"
+//   : "http://localhost:3001";
 
 
 export const signUp = (email, password, name) => {
@@ -31,7 +31,7 @@ export const checkToken = (token) => {
    const auth = {
     signUp,
     checkToken,
-    login
+    login,
    };
 
 export default auth;
