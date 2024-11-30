@@ -2,7 +2,7 @@ import "./SavedNews.css";
 import Navigation from "../Navigation/Navigation";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import { useContext, useEffect } from "react";
-import { UserContext } from "../../context/UserContext";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { SavedArticleContext } from "../../context/SavedArticleContext";
 import { getArticles } from "../../utils/article-api";
 const SavedNews = ({
@@ -12,7 +12,7 @@ const SavedNews = ({
   handleUnsaveArticle,
   keyword,
 }) => {
-  const currentUser = useContext(UserContext);
+  const currentUser = useContext(CurrentUserContext);
   const { savedArticles, setSavedArticles } = useContext(SavedArticleContext);
 
   // Filtering only cards to count for the current user

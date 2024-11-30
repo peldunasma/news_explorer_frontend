@@ -1,11 +1,16 @@
 import "./Header.css";
 import Navigation from "../Navigation/Navigation";
+import SearchForm from "../SearchForm/SearchForm";
 
 const Header = ({
   handleSignUp,
   handleLogin,
   isLoggedIn,
-  handleLogout
+  handleLogout, 
+  handleSubmit,
+  setSearching,
+  setIsLoading,
+  setArticles,
 }) => {
   return (
     <header className="header">
@@ -15,6 +20,12 @@ const Header = ({
       isLoggedIn={isLoggedIn}
       handleLogout={handleLogout}
        />
+       <SearchForm
+        handleSubmit={handleSubmit}
+        setSearching={setSearching}
+        setIsLoading={setIsLoading}
+        setArticles={setArticles}
+      />
     </header>
   );
 };

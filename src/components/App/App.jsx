@@ -10,6 +10,7 @@ import Main from "../Main/Main";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import SavedNews from "../SavedNews/SavedNews";
 
+
 // Hooks and Routes
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
@@ -17,7 +18,7 @@ import { Route, Routes } from "react-router-dom";
 //Utils
 import auth from "../../utils/auth";
 import {searchNews} from "../../utils/NewsApi";
-import { saveArticle, unsaveArticle, getArticles } from "../../utils/article-api";
+import { saveArticle, unsaveArticle } from "../../utils/article-api";
 
 // Contexts
 import { CurrentUserContext } from "../../context/CurrentUserContext";
@@ -128,7 +129,8 @@ function App() {
       .then((data) => {
         setSearching(true);
         setTimeout(() => {
-          const filteredArticles = data.articles.filter(
+          console.log(data)
+          const filteredArticles = data.filter(
             (article) =>
               article.urlToImage &&
               article.title &&
@@ -224,6 +226,7 @@ function App() {
                   showMoreArticles={showMoreArticles}
                   handleSaveArticle={handleSaveArticle}
                   error={error}
+                  keyword={keyword}
                   />
                 </>
               }

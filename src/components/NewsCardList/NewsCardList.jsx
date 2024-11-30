@@ -9,7 +9,7 @@ import Preloader from "../Preloader/Preloader";
 import NotFound from "../NotFound/NotFound";
 
 const NewsCardList = ({
-    loggedIn,
+    isLoggedIn,
     isSavedNews,
     isLoading,
     searching,
@@ -27,6 +27,7 @@ const NewsCardList = ({
     const { articles, shownArticles } = useContext(ArticleContext);
     const { savedArticles } = useContext(SavedArticleContext);
   
+    console.log(articles)
     return (
       <>
         {/* HOME PAGE NEWS CARD LIST */}
@@ -57,7 +58,7 @@ const NewsCardList = ({
                         <li className="cards__list-item" key={index}>
                           <NewsCard
                             article={article}
-                            loggedIn={loggedIn}
+                            isLoggedIn={isLoggedIn}
                             openPopup={openPopup}
                             handleSaveArticle={handleSaveArticle}
                             keyword={keyword}
@@ -96,7 +97,7 @@ const NewsCardList = ({
                             handleUnsaveArticle={handleUnsaveArticle}
                             savedArticle={savedArticle}
                             isSavedNews={isSavedNews}
-                            loggedIn={loggedIn}
+                            isLoggedIn={isLoggedIn}
                             handleConfirmPopup={handleConfirmPopup}
                             keyword={keyword}
                           />

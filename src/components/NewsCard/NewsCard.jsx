@@ -4,7 +4,7 @@ import { useState } from "react";
 const NewsCard = ({
   isSavedNews,
   article,
-  isloggedIn,
+  isLoggedIn,
   openPopup,
   handleSaveArticle,
   savedArticle,
@@ -77,7 +77,7 @@ const NewsCard = ({
       ) : (
         <>
           <div className="card">
-            {isloggedIn === true ? (
+            {isLoggedIn === true ? (
               <button
                 onClick={(e) => {
                   handleSaveArticle({ article }, keyword);

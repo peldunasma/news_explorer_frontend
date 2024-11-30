@@ -169,7 +169,7 @@
   }
   
   .card__bookmark:hover {
-    background: white url("../../images/bookmark-hover.svg") center no-repeat;
+    background: url("../../images/bookmark-hover.svg") center no-repeat;
     cursor: pointer;
   }
   
