@@ -18,7 +18,7 @@ import { Route, Routes } from "react-router-dom";
 //Utils
 import auth from "../../utils/auth";
 import {searchNews} from "../../utils/NewsApi";
-import { saveArticle, unsaveArticle } from "../../utils/article-api";
+import { saveArticle} from "../../utils/article-api";
 
 // Contexts
 import { CurrentUserContext } from "../../context/CurrentUserContext";
