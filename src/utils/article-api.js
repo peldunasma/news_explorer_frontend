@@ -1,4 +1,4 @@
-export function getArticles() {
+export function getArticles(savedArticle) {
   return new Promise((resolve, reject) => {
     resolve([
       {
@@ -25,12 +25,13 @@ export function saveArticle(article) {
   return new Promise((resolve, reject) => {
     resolve({
       id: "65f7371e7bce9e7d331b11a0",
-      url: article.url,
       title: article.title,
-      imageUrl: article.imageUrl,
-      date: article.date,
       description: article.description,
-      source: article.source,
+      urlToImage: article.urlToImage,
+      date: formattedDate,
+      keyword: keyword,
+      author: article.source.name,
+      url: article.url,
     });
   });
 }
