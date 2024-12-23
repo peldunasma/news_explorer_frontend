@@ -157,6 +157,8 @@
     position: absolute;
     left: 24px;
     top: 24px;
+    width: 80px;
+    height: 40px;
     z-index: 1;
   }
   
@@ -164,8 +166,7 @@
     font-size: 14px;
     font-family: "Roboto-500", sans-serif;
     text-align: center;
-    padding: 12px 22px;
-    width: 100%;
+    margin: 12px 0px;
   }
   
   .card__bookmark:hover {
@@ -191,6 +192,17 @@
   .card__trashcan:hover {
     background: white url("../../images/trash-hover.svg") center no-repeat;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 1;
   }
   
  

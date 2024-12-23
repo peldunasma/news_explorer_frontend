@@ -1,9 +1,9 @@
 import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
 import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
 import { ArticleContext } from "../../context/ArticleContext";
 import { SavedArticleContext } from "../../context/SavedArticleContext";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useLocation } from "react-router-dom";
 import Preloader from "../Preloader/Preloader";
 import NotFound from "../NotFound/NotFound";
@@ -23,7 +23,7 @@ const NewsCardList = ({
   }) => {
     const route = useLocation();
   
-    const currentUser = useContext(UserContext);
+    const currentUser = useContext(CurrentUserContext);
     const { articles, shownArticles } = useContext(ArticleContext);
     const { savedArticles } = useContext(SavedArticleContext);
   

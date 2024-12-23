@@ -2,10 +2,11 @@ import "../Navigation/Navigation.css";
 import { Link } from "react-router-dom";
 import logout_light from "../../images/logout_light.svg";
 import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
 
 const NavigationSaved = ({ handleLogout, handleEditPopup }) => {
-  const currentUser = useContext(UserContext);
+  const currentUser = useContext(CurrentUserContext);
+  console.log(currentUser)
   return (
     <>
       <nav
@@ -32,7 +33,7 @@ const NavigationSaved = ({ handleLogout, handleEditPopup }) => {
           <Link to="/" style={{ textDecoration: "none", color: "#1a1b22" }}>
             <button
               type="text"
-              className="nav__button-logout"
+              className="nav__button-logout-saved"
               onClick={handleLogout}
             >
               {currentUser?.name}

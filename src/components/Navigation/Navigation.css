@@ -6,22 +6,20 @@
 .nav__content {
   min-width: 320px;
   max-width: 1440px;
-  color: white;
   padding: 16px 52px 13px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
 .nav__buttons {
   display: flex;
-  gap: 50px;
+  gap: 49px;
 }
 
 .nav__buttons-saved{
   display: flex;
-  gap: 50px;
+  gap: 49px;
 }
 
 .nav__title {
@@ -35,9 +33,9 @@
   color: white;
   background: none;
   cursor: pointer;
-  width: 50px;
   font-size: 18px;
   padding-left: 10px;
+  width: 49px;
   font-family: "Roboto-400", sans-serif;
   border: none;
 }
@@ -45,8 +43,8 @@
 .nav__button-login {
   background: none;
   border: 1px solid;
-  border-radius: 25px;
-  width: 176px;
+  border-radius: 24px;
+  width: 152px;
   height: 48px;
   color: white;
   font-size: 18px;
@@ -58,16 +56,30 @@
   background: none;
   border: 1px solid;
   border-radius: 25px;
-  color: #1a1b22;
+  color: white;
   font-size: 18px;
-  padding: 12px 19px;
+  padding: 13px 20px;
   cursor: pointer;
   font-family: "Roboto-500";
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 14px;
 }
+
+.nav__button-logout-saved {
+  background: none;
+  border: 1px solid;
+  border-radius: 25px;
+  color: black;
+  font-size: 18px;
+  padding: 13px 20px;
+  cursor: pointer;
+  font-family: "Roboto-500";
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 
 .nav__button-logout-icon {
   width: 18px;
@@ -85,7 +97,7 @@
   width: 160px;
   border-bottom: 2px solid black;
   position: absolute;
-  top: 63px;
+  top: 67px;
   margin-left: 100px;
 }
 

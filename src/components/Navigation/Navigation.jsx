@@ -1,6 +1,6 @@
 import "./Navigation.css";
 import { Link, useLocation } from "react-router-dom";
-import logout_light from "../../images/logout_light.svg";
+import logout_white from "../../images/logout_white.svg";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useContext } from "react";
 import NavigationSaved from "../NavigationSaved/NavigationSaved";
@@ -50,7 +50,7 @@ const Navigation = ({
                   >
                     {currentUser?.name}
                     <img
-                      src={logout_light}
+                      src={logout_white}
                       className="nav__button-logout-icon"
                       alt="Logout Icon"
                     />

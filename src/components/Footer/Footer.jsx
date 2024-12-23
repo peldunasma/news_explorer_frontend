@@ -1,6 +1,7 @@
 import "./Footer.css";
 import github from "../../images/github.svg";
 import facebook from "../../images/fb.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -10,13 +11,31 @@ const Footer = () => {
           &copy; Supersite, Powered by News API
         </p>
           <ul className="footer__content-list">
-              <div className="footer__content_text-container">
-                <p className="footer__content_list-text">Home</p>
-                <p className="footer__content_list-text">TripleTen</p>
+          <div className="footer__content_text-container">
+                <a
+                  href="/"
+                  style={{ color: "black" }}
+                  >
+                <li className="footer__content_list-text">Home</li>
+                </a>
+                <a
+                  href="https://tripleten.com"
+                  style={{ color: "black" }}
+                  >
+                <li className="footer__content_list-text">TripleTen</li>
+                </a>
               </div>
-              <div className="footer__content_buttons-container">
+              <div className="footer__content_social-container">
+              <a
+                  href="https://github.com/peldunasma"
+                >
                 <img src={github} className="footer__content_list-img" />
+                </a>
+                <a
+                  href="https://facebook.com"
+                >
                 <img src={facebook} className="footer__content_list-img" />
+                </a>
               </div>
           </ul>
       </div>

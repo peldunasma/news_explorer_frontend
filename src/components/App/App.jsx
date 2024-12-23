@@ -100,6 +100,7 @@ function App() {
       })
       .then(({data}) => {
         setCurrentUser(data);
+        console.log(data)
         handleCloseModal();
         setIsLoggedIn(true);
       })
@@ -124,12 +125,21 @@ function App() {
     localStorage.removeItem("jwt");
   };
 
+  
+  const handleSaveArticle = ({ article }, keyword) => {
+    const token = localStorage.getItem("jwt");
+    saveArticle({ article }, token, keyword)
+      .then((savedArticles) => {
+        setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
+      })
+      .catch((err) => console.log(err));
+  };
+
   const handleSearchResults = (query) => {
     searchNews(query)
       .then((data) => {
         setSearching(true);
         setTimeout(() => {
-          console.log(data)
           const filteredArticles = data.filter(
             (article) =>
               article.urlToImage &&
@@ -142,20 +152,8 @@ function App() {
         setKeyword(query);
       })
       .catch((err) => {
-        console.log(err);
-        setError(
-          "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later."
-        );
+        console.error("Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.");
       });
-  };
-
-  const handleSaveArticle = ({ article }, keyword) => {
-    const token = localStorage.getItem("jwt");
-    saveArticle({ article }, token, keyword)
-      .then((savedArticles) => {
-        setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
-      })
-      .catch((err) => console.log(err));
   };
 
   const handleUnsaveArticle = (article) => {
