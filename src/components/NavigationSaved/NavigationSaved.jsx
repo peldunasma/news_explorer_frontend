@@ -1,6 +1,6 @@
 import "../Navigation/Navigation.css";
 import { Link } from "react-router-dom";
-import logout_light from "../../images/logout_light.svg";
+import logout from "../../images/logout.svg";
 import { useContext } from "react";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 
@@ -11,33 +11,33 @@ const NavigationSaved = ({ handleLogout, handleEditPopup }) => {
     <>
       <nav
         className="nav__content"
-        style={{ borderBottom: "0.5px solid", borderColor: "#1a1b22" }}
+        style={{ borderBottom: "0.5px solid", borderColor: "black" }}
       >
-        <h2 className="nav__title" style={{ color: "#1a1b22" }}>
+        <h2 className="nav__title" style={{ color: "black" }}>
           NewsExplorer
         </h2>
         <div className="nav__buttons">
           <button type="text" className="nav__button-home">
-            <Link to="/" style={{ color: "#1a1b22" }}>
+            <Link to="/" style={{ color: "black" }}>
               Home
             </Link>
           </button>
           <button
             type="text"
             className="nav__button-saved"
-            style={{ color: "#1a1b22" }}
+            style={{ color: "black" }}
           >
             Saved Articles
           </button>
           <hr className="nav__outline-black" />
-          <Link to="/" style={{ textDecoration: "none", color: "#1a1b22" }}>
+          <Link to="/" style={{ color: "black" }}>
             <button
               type="text"
               className="nav__button-logout-saved"
               onClick={handleLogout}
             >
               {currentUser?.name}
-              <img src={logout_light} className="nav__button-logout-icon"  alt="Logout Icon"/>
+              <img src={logout} className="nav__button-logout-icon"  alt="logout"/>
             </button>
           </Link>
         </div>

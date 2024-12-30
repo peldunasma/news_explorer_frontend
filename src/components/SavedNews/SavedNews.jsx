@@ -72,7 +72,7 @@ const SavedNews = ({
 
   const keywordString = getKeywordString(keywordArray);
 
-  // TEMPORARY SAVED CARDS JUST SEARCHING FOR TOP HEADLINES NO BACKEND YET
+  // TEMPORARY SAVED CARDS JUST SEARCHING FOR TOP HEADLINES
   useEffect(() => {
     console.log(keyword);
     if (isSavedNews) {
@@ -97,7 +97,7 @@ const SavedNews = ({
           <h1 className="saved__text-title">{`${currentUser?.name}, you have ${userArticleFilter.length} saved articles`}</h1>
           <p className="saved__text-keywords">
             By keywords:
-            <span className="saved__text-span"> {keywordString}</span>
+            <span className="saved__text-keyword"> {keywordString}</span>
           </p>
         </div>
       </header>

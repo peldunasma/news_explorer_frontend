@@ -102,9 +102,7 @@
 }
 
 .nav__button-saved {
-  color: white;
   background: none;
-  border: none;
   font-size: 18px;
   cursor: pointer;
   font-family: "Roboto-400", sans-serif;

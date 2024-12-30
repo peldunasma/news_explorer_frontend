@@ -15,7 +15,7 @@ const SearchForm = ({
 
   function handleSearch(e) {
     e.preventDefault();
-    // resetting the search results every search
+    // resets the search results
     setArticles([]);
     setSearching(false);
     setIsLoading(true);
@@ -40,7 +40,7 @@ const SearchForm = ({
         </div>
         <div className="search__form-container">
           <form className="search__form" onSubmit={handleSearch}>
-            <fieldset className="search__form-fieldset">
+            <span className="search__form-fieldset">
               <input
                 placeholder="Enter topic"
                 required
@@ -51,7 +51,7 @@ const SearchForm = ({
               <button type="submit" className="search__submit-button">
                 Search
               </button>
-            </fieldset>
+            </span>
           </form>
         </div>
       </div>

@@ -29,12 +29,12 @@ const Footer = () => {
               <a
                   href="https://github.com/peldunasma"
                 >
-                <img src={github} className="footer__content_list-img" />
+                <img src={github} alt="github" className="footer__content_list-img" />
                 </a>
                 <a
                   href="https://facebook.com"
                 >
-                <img src={facebook} className="footer__content_list-img" />
+                <img src={facebook} alt="facebook" className="footer__content_list-img" />
                 </a>
               </div>
           </ul>

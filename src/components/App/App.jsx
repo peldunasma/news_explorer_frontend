@@ -10,21 +10,19 @@ import Main from "../Main/Main";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import SavedNews from "../SavedNews/SavedNews";
 
-
 // Hooks and Routes
 import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 //Utils
 import auth from "../../utils/auth";
-import {searchNews} from "../../utils/NewsApi";
-import { saveArticle} from "../../utils/article-api";
+import { searchNews } from "../../utils/NewsApi";
+import { saveArticle } from "../../utils/article-api";
 
 // Contexts
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { SavedArticleContext } from "../../context/SavedArticleContext";
 import { ArticleContext } from "../../context/ArticleContext";
-
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -75,10 +73,10 @@ function App() {
     auth
       .signUp({ email, password, name })
       .then(() => {
-        handleSignUpModal({ email, password, name});
+        handleSignUpModal({ email, password, name });
         handleCloseModal();
         handleSuccessModal();
-        setCurrentUser({ email, password, name});
+        setCurrentUser({ email, password, name });
         setIsLoggedIn(true);
       })
       .catch((err) => {
@@ -98,9 +96,9 @@ function App() {
         localStorage.setItem("jwt", res.token);
         return auth.checkToken(res.token);
       })
-      .then(({data}) => {
+      .then(({ data }) => {
         setCurrentUser(data);
-        console.log(data)
+        console.log(data);
         handleCloseModal();
         setIsLoggedIn(true);
       })
@@ -125,7 +123,6 @@ function App() {
     localStorage.removeItem("jwt");
   };
 
-  
   const handleSaveArticle = ({ article }, keyword) => {
     const token = localStorage.getItem("jwt");
     saveArticle({ article }, token, keyword)
@@ -152,7 +149,9 @@ function App() {
         setKeyword(query);
       })
       .catch((err) => {
-        console.error("Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later.");
+        console.error(
+          "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later."
+        );
       });
   };
 
@@ -172,7 +171,7 @@ function App() {
   };
 
   // useEffect APIs
-  
+
   useEffect(() => {
     if (!activeModal) return; // stop the effect not to add the listener if there is no active modal
     const handleEscClose = (e) => {
@@ -191,95 +190,95 @@ function App() {
   return (
     <>
       <CurrentUserContext.Provider value={currentUser}>
-      <ArticleContext.Provider
+        <ArticleContext.Provider
           value={{ articles, setArticles, shownArticles, setShownArticles }}
         >
-      <SavedArticleContext.Provider
+          <SavedArticleContext.Provider
             value={{ savedArticles, setSavedArticles }}
           >
-        <div className="page">
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={
-                <>
-                  <Header
-                    handleSignUp={handleSignUpModal}
-                    handleLogin={handleLoginModal}
-                    handleSubmit={handleSearchResults}
-                    isLoggedIn={isLoggedIn}
-                    handleLogout={handleLogout}
-                    openPopup={handleLogin}
-                    setArticles={setArticles}
-                    setIsLoading={setIsLoading}
-                    setSearching={setSearching}
-                  />
-                  <Main 
-                  articles={articles}
-                  openPopup={handleLogin} 
-                  isLoggedIn={isLoggedIn}
-                  isLoading={isLoading}
-                  searching={searching}
-                  showMoreArticles={showMoreArticles}
-                  handleSaveArticle={handleSaveArticle}
-                  error={error}
-                  keyword={keyword}
-                  />
-                </>
-              }
-            />
-            <Route
-            path="/saved-news"
-            element={
-              <ProtectedRoute isLoggedIn={isLoggedIn}>
-              <SavedNews
-              isLoggedIn={isLoggedIn}
-              isSavedNews={true}
-              openPopup={handleSignUpModal}
-              savedArticles={savedArticles}
-              handleLogout={handleLogout}
-              keyword={keyword}
-              handleUnsaveArticle={handleUnsaveArticle}
-              />
-              </ProtectedRoute>
-            }
-            />
-          </Routes>
-          <Footer isSavedNews={isSavedNews}/>
-          {activeModal === "login" && (
-            <LoginModal
-              handleCloseModal={handleCloseModal}
-              onSubmit={handleLogin}
-              isOpen={activeModal === "login"}
-              switchToSignup={handleSwitch}
-              serverError={serverError}
-              setServerError={setServerError}
-            />
-          )}
-          {activeModal === "signup" && (
-            <RegisterModal
-              handleCloseModal={handleCloseModal}
-              handleSignUp={handleSignUp}
-              isOpen={activeModal === "signup"}
-              switchToLogin={handleSwitch}
-              handleSuccessModal={handleSuccessModal}
-              serverError={serverError}
-              setServerError={setServerError}
-            />
-          )}
-          {activeModal === "success" && (
-            <SuccessModal
-              handleCloseModal={handleCloseModal}
-              switchToLogin={handleSwitch}
-              isOpen={activeModal === "success"}
-              handleLogin={handleLogin}
-              serverError={serverError}
-              setServerError={setServerError}
-            />
-          )}
-        </div>
-        </SavedArticleContext.Provider>
+            <div className="page">
+              <Routes>
+                <Route
+                  exact
+                  path="/"
+                  element={
+                    <>
+                      <Header
+                        handleSignUp={handleSignUpModal}
+                        handleLogin={handleLoginModal}
+                        handleSubmit={handleSearchResults}
+                        isLoggedIn={isLoggedIn}
+                        handleLogout={handleLogout}
+                        openPopup={handleLogin}
+                        setArticles={setArticles}
+                        setIsLoading={setIsLoading}
+                        setSearching={setSearching}
+                      />
+                      <Main
+                        articles={articles}
+                        openPopup={handleLogin}
+                        isLoggedIn={isLoggedIn}
+                        isLoading={isLoading}
+                        searching={searching}
+                        showMoreArticles={showMoreArticles}
+                        handleSaveArticle={handleSaveArticle}
+                        error={error}
+                        keyword={keyword}
+                      />
+                    </>
+                  }
+                />
+                <Route
+                  path="/saved-news"
+                  element={
+                    <ProtectedRoute isLoggedIn={isLoggedIn}>
+                      <SavedNews
+                        isLoggedIn={isLoggedIn}
+                        isSavedNews={true}
+                        openPopup={handleSignUpModal}
+                        savedArticles={savedArticles}
+                        handleLogout={handleLogout}
+                        keyword={keyword}
+                        handleUnsaveArticle={handleUnsaveArticle}
+                      />
+                    </ProtectedRoute>
+                  }
+                />
+              </Routes>
+              <Footer isSavedNews={isSavedNews} />
+              {activeModal === "login" && (
+                <LoginModal
+                  handleCloseModal={handleCloseModal}
+                  onSubmit={handleLogin}
+                  isOpen={activeModal === "login"}
+                  switchToSignup={handleSwitch}
+                  serverError={serverError}
+                  setServerError={setServerError}
+                />
+              )}
+              {activeModal === "signup" && (
+                <RegisterModal
+                  handleCloseModal={handleCloseModal}
+                  handleSignUp={handleSignUp}
+                  isOpen={activeModal === "signup"}
+                  switchToLogin={handleSwitch}
+                  handleSuccessModal={handleSuccessModal}
+                  serverError={serverError}
+                  setServerError={setServerError}
+                />
+              )}
+              {activeModal === "success" && (
+                <SuccessModal
+                  handleCloseModal={handleCloseModal}
+                  switchToLogin={handleSwitch}
+                  isOpen={activeModal === "success"}
+                  handleLogin={handleLogin}
+                  serverError={serverError}
+                  setServerError={setServerError}
+                />
+              )}
+            </div>
+          </SavedArticleContext.Provider>
         </ArticleContext.Provider>
       </CurrentUserContext.Provider>
     </>

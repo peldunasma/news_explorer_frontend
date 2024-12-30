@@ -24,12 +24,6 @@ const PopupForm = ({
         >
           {children}
             <>
-            <button
-              onClick={popupSwitch}
-              type="text"
-              className="popup__switch"
-            >
-              </button>
               </>
         </form>
       </div>

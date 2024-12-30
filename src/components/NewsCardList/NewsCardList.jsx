@@ -24,10 +24,9 @@ const NewsCardList = ({
     const route = useLocation();
   
     const currentUser = useContext(CurrentUserContext);
-    const { articles, shownArticles } = useContext(ArticleContext);
     const { savedArticles } = useContext(SavedArticleContext);
+    const { articles, shownArticles } = useContext(ArticleContext);
   
-    console.log(articles)
     return (
       <>
         {/* HOME PAGE NEWS CARD LIST */}
@@ -37,7 +36,6 @@ const NewsCardList = ({
               <p className="cards__search-error">{error}</p>
             ) : null}
             {searching ? (
-              // Search and Loader Components
               <section className="cards">
                 <h3 className="cards__text">Search Results</h3>
                 {isLoading ? (
@@ -50,7 +48,7 @@ const NewsCardList = ({
                     <NotFound />
                   </>
                 ) : null}
-                {/* Rendering cards through search */}
+                {/* Rendering cards when searching */}
                 <div className="cards__list-container">
                   <ul className="cards__list">
                     {articles.slice(0, shownArticles).map((article, index) => {
@@ -89,7 +87,7 @@ const NewsCardList = ({
               <div className="cards__list-container">
                 <ul className="cards__list">
                   {savedArticles.map((savedArticle) => {
-                    // Rendering only cards that the current user saved
+                    // Rendering current user saved cards
                     if (savedArticle.owner === currentUser._id) {
                       return (
                         <li className="cards__list-item" key={savedArticle._id}>

@@ -19,12 +19,12 @@ const Navigation = ({
     <>
       <nav className="nav" >
         {route.pathname === "/" ? (
-          // HOMEPAGE NAV BAR (LIGHT MODE)
+          // NAV BAR (LIGHT MODE)
           <nav
             className="nav__content"
           >
             <h2 className="nav__title">NewsExplorer</h2>
-            {/* Logged In Nav Bar */}
+            {/* NAV BAR (LOGGED IN) */}
             {isLoggedIn ? (
               <>
                 <div className="nav__buttons">
@@ -58,7 +58,7 @@ const Navigation = ({
                 </div>
               </>
             ) : (
-              // Logged Out Nav Bar
+              // NAV BAR (LOGGED OUT)
               <>
                 <div className="nav__buttons">
                   <button type="text" className="nav__button-home">
@@ -73,7 +73,7 @@ const Navigation = ({
             )}
           </nav>
         ) : (
-          // SAVED NEWS NAV BAR (DARK MODE)
+          // NAV BAR (DARK MODE)
           <NavigationSaved
             handleLogout={handleLogout}
             handleEditPopup={handleEditPopup}

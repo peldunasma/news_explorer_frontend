@@ -5,3 +5,15 @@
     background-position: center;
     filter: brightness(90%);
   }
+
+  @media screen and (max-width: 815px) {
+    .header {
+      height: 400px;
+    }
+  }
+  
+  @media screen and (max-width: 550px) {
+    .header {
+      height: 536px;
+    }
+  }

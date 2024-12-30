@@ -8,19 +8,12 @@ const NewsCard = ({
   openPopup,
   handleSaveArticle,
   savedArticle,
-  handleConfirmPopup,
   keyword,
 }) => {
-  // cards accept news data
 
   const [clicked, setClicked] = useState(false);
   const [visible, setVisibile] = useState(false);
 
-  const convertDate = (isoDate) => {
-    const date = new Date(isoDate);
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    return date.toLocaleDateString("en-US", options);
-  };
 
   const handleClick = () => {
     setClicked(true);
@@ -34,15 +27,20 @@ const NewsCard = ({
     setVisibile(false);
   };
 
+  const convertDate = (isDate) => {
+    const date = new Date(isDate);
+    const results = { year: "numeric", month: "long", day: "numeric" };
+    return date.toLocaleDateString("en-US", results);
+  };
+
   return (
     <>
       {isSavedNews ? (
         <>
           <div className="card">
             <button
-              className="card__trashcan"
+              className="card__trash"
               type="button"
-              onClick={() => handleConfirmPopup(savedArticle)}
             />
             <div className="card__keyword-container">
               <p className="card__keyword">{savedArticle.keyword}</p>
@@ -57,16 +55,14 @@ const NewsCard = ({
               )}
               <div className="card__text-container">
                 <p className="card__date">{savedArticle.date}</p>
-                <h3 className="card__title title_clamp">
+                <h3 className="card__title">
                   <a
                     href={savedArticle.url}
-                    rel="noopener noreferer"
-                    target="_blank"
                   >
                     {savedArticle.title}
                   </a>
                 </h3>
-                <p className="card__text text_clamp">
+                <p className="card__text">
                   {savedArticle.description}
                 </p>
                 <p className="card__author">{savedArticle.author}</p>
@@ -118,16 +114,14 @@ const NewsCard = ({
               )}
               <div className="card__text-container">
                 <p className="card__date">{convertDate(article.publishedAt)}</p>
-                <h3 className="card__title title_clamp">
+                <h3 className="card__title">
                   <a
                     href={article.url}
-                    rel="noopener noreferer"
-                    target="_blank"
                   >
                     {article.title}
                   </a>
                 </h3>
-                <p className="card__text text_clamp">{article.description}</p>
+                <p className="card__text">{article.description}</p>
                 <p className="card__author">{article.source.name}</p>
               </div>
             </article>

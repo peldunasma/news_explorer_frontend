@@ -10,9 +10,6 @@
   }
   
   .saved__text-container {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
     margin: 40px 0 40px 50px;
     min-width: 320px;
   }
@@ -21,7 +18,7 @@
     font-size: 18px;
     font-family: "Roboto-400", sans-serif;
     line-height: 24px;
-    color: #1a1b2280;
+    color: black;
     margin: 0;
   }
   
@@ -29,20 +26,20 @@
     font-size: 40px;
     max-width: 530px;
     font-family: "Roboto-Slab-400", serif;
-    color: #1a1b22;
+    color: black;
     line-height: 46px;
-    margin: 28px 0 0;
+    margin: 29px 0 0;
   }
   
   .saved__text-keywords {
     font-family: "Roboto-400", sans-serif;
     font-size: 18px;
     line-height: 24px;
-    color: #1a1b22;
-    margin: 30px 0 0;
+    color: black;
+    margin: 29px 0 0;
   }
   
-  .saved__text-span {
+  .saved__text-keyword {
     font-family: "Roboto-700", sans-serif;
     font-size: 18px;
     line-height: 24px;
