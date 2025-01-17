@@ -39,7 +39,7 @@ const NewsCard = ({
         <>
           <div className="card">
             <button
-              className="card__trash"
+              className="card__trashcan"
               type="button"
             />
             <div className="card__keyword-container">

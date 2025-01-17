@@ -3,8 +3,7 @@
     flex-direction: column;
     border-radius: 10px;
     background: white;
-    min-width: 400px;
-    max-width: 400px;
+    width: 400px;
     height: 576px;
   }
   
@@ -51,7 +50,6 @@
     line-height: 24px;
     color: lightgray;
     margin: 0;
-    max-width: 149px;
   }
   
   .card__author {
@@ -140,7 +138,7 @@
     cursor: pointer;
   }
   
-  .card__trash {
+  .card__trashcan {
     background: white url("../../images/trash.svg") center no-repeat;
     width: 40px;
     height: 40px;
@@ -150,7 +148,7 @@
     right: 24px;
   }
   
-  .card__trash:hover {
+  .card__trashcan:hover {
     background: white url("../../images/trash-hover.svg") center no-repeat;
     cursor: pointer;
     width: 40px;
@@ -160,10 +158,14 @@
     top: 24px;
     right: 24px;
   }
-  
-  @media screen and (max-width: 815px) {
+
+  a:link {
+    color: black;
+}
+
+  @media screen and (max-width: 770px) {
     .card__content {
-      max-width: 224px;
+      width: 224px;
       height: 420px;
     }
   
@@ -217,4 +219,3 @@
       width: 256px;
     }
   }
- 

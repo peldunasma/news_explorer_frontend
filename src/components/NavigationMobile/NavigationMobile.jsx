@@ -1,20 +1,19 @@
 import "./NavigationMobile.css";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import logout_light from "../../images/logout_light.svg";
-import { UserContext } from "../../contexts/UserContext";
+import logout_light from "../../images/logout_white.svg";
+import { CurrentUserContext } from "../../context/CurrentUserContext";
 
 const NavigationMobile = ({
   route,
-  isLoggedIn,
   openPopup,
+  isLoggedIn,
   isSavedNews,
   handleLogout,
-  handleEditPopup,
 }) => {
   const [dropdown, setDropdown] = useState(false);
 
-  const currentUser = useContext(UserContext);
+  const currentUser = useContext(CurrentUserContext);
 
   function handleDropdown() {
     setDropdown(true);
@@ -69,19 +68,6 @@ const NavigationMobile = ({
                 </Link>
               </button>
               <button
-                className="nav__button"
-                style={{
-                  textDecoration: "none",
-                  color: "white",
-                  width: "100px",
-                  textAlign: "left",
-                }}
-                type="text"
-                onClick={handleEditPopup}
-              >
-                Edit Profile
-              </button>
-              <button
                 type="text"
                 className="nav__mobile-button__logout"
                 onClick={() => {
@@ -89,7 +75,7 @@ const NavigationMobile = ({
                   closeDropdown();
                 }}
               >
-                {currentUser?.username}
+                {currentUser?.name}
                 <img
                   src={logout_light}
                   className="nav__mobile-button__logout-icon"

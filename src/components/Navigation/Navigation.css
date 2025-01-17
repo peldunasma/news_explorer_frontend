@@ -107,3 +107,20 @@
   cursor: pointer;
   font-family: "Roboto-400", sans-serif;
 }
+
+.nav__mobile-toggle {
+  visibility: hidden;
+  display: none;
+}
+
+@media screen and (max-width: 550px) {
+  .nav__mobile-toggle {
+    visibility: visible;
+    display: contents;
+  }
+
+  .nav__content {
+    visibility: hidden;
+    display: none;
+  }
+}

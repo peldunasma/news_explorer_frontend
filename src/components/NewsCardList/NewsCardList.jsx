@@ -37,7 +37,7 @@ const NewsCardList = ({
             ) : null}
             {searching ? (
               <section className="cards">
-                <h3 className="cards__text">Search Results</h3>
+                <h3 className="cards__text">Search results</h3>
                 {isLoading ? (
                   <>
                     <Preloader />

@@ -4,12 +4,14 @@ import logout_white from "../../images/logout_white.svg";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useContext } from "react";
 import NavigationSaved from "../NavigationSaved/NavigationSaved";
+import NavigationMobile from "../NavigationMobile/NavigationMobile";
 
 const Navigation = ({
   handleLogin,
   isLoggedIn,
   handleLogout,
   handleEditPopup,
+  isSavedNews,
 }) => {
 
   const route = useLocation();
@@ -79,6 +81,16 @@ const Navigation = ({
             handleEditPopup={handleEditPopup}
           />
         )}
+        <div className="nav__mobile-toggle">
+          <NavigationMobile
+            openPopup={handleLogin}
+            isSavedNews={isSavedNews}
+            isLoggedIn={isLoggedIn}
+            handleLogout={handleLogout}
+            route={route}
+            handleEditPopup={handleEditPopup}
+          />
+        </div>
       </nav>
     </>
   );

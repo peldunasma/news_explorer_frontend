@@ -6,7 +6,7 @@
     filter: brightness(90%);
   }
 
-  @media screen and (max-width: 815px) {
+  @media screen and (max-width: 770px) {
     .header {
       height: 400px;
     }

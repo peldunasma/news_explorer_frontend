@@ -50,7 +50,7 @@
   }
   @media screen and (max-width: 990px) {
     .footer__content {
-      padding: 24px 40px 18px;
+      padding: 24px 20px 18px;
     }
   
     .footer__content-list-item {
@@ -63,13 +63,14 @@
     }
   }
   
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 550px) {
     .footer__content {
       padding: 60px 16px 0;
     }
   
     .footer__content-copyright {
-      margin: 38px auto 22px;
+      margin-top: 38px;
+      margin-right: 70px;
     }
   
     .footer__content-list-container {
@@ -80,6 +81,7 @@
       align-items: start;
       justify-content: space-between;
       width: 100%;
+      padding-left: 10px;
     }
   
     .footer__content {

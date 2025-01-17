@@ -44,7 +44,7 @@
   }
   
   .button_disabled {
-    background-color: white;
+    background-color: #e6e8eb;
     color: lightgrey;
     cursor: not-allowed;
   }
@@ -57,32 +57,4 @@
   .button_enabled:hover {
     cursor: pointer;
     background-color: #2f71e3;
-  }
-
-  @media screen and (max-width: 645px) {
-    .popup {
-      display: block;
-      /* transition: none; */
-    }
-  
-    .popup_opened {
-      animation: pullUp 400ms ease-in-out;
-      /* visibility: hidden; */
-    }
-  
-    .popup__form-input {
-      width: 100%;
-    }
-    .popup__content {
-      height: 100%;
-      width: 100%;
-      border-radius: 20px 20px 0 0;
-      margin: 75px 0 0 0;
-    }
-  
-    .popup__close-button {
-      position: fixed;
-      top: 8px;
-      right: 8px;
-    }
   }
