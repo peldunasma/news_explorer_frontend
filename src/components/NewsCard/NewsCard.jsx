@@ -40,6 +40,12 @@ const NewsCard = ({
         <>
           <div className="card">
             <button
+            onClick={(e) => {
+              console.log("Unsave")
+              handleUnsaveArticle({ article }, keyword);
+              e.currentTarget.disabled = true;
+              handleClick();
+            }}
               className="card__trashcan"
               type="button"
             />
@@ -89,12 +95,6 @@ const NewsCard = ({
             ) : (
               <>
                 <button
-                onClick={(e) => {
-                  console.log("Unsave")
-                  handleUnsaveArticle({ article }, keyword);
-                  e.currentTarget.disabled = false;
-                  handleClick();
-                }}
                   disabled
                   className="card__bookmark-disabled"
                   onMouseOver={handleHover}
