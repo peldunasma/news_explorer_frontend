@@ -181,4 +181,9 @@
 .nav__mobile-button {
   margin-right: 35px; 
 }
+
+.nav__dropdown-close-button{
+  margin-right: 40px; 
+}
+
 }

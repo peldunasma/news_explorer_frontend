@@ -15,7 +15,7 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 //Utils
-import auth from "../../utils/auth";
+import auth, { login } from "../../utils/auth";
 import { searchNews } from "../../utils/NewsApi";
 import { saveArticle } from "../../utils/article-api";
 
@@ -213,6 +213,7 @@ function App() {
                         setArticles={setArticles}
                         setIsLoading={setIsLoading}
                         setSearching={setSearching}
+                        hideMobileButtons={activeModal == "login"}
                       />
                       <Main
                         articles={articles}

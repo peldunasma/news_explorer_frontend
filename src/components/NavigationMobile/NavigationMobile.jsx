@@ -10,6 +10,7 @@ const NavigationMobile = ({
   isLoggedIn,
   isSavedNews,
   handleLogout,
+  hideMobileButtons,
 }) => {
   const [dropdown, setDropdown] = useState(false);
 

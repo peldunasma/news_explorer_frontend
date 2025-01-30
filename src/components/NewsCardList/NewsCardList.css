@@ -67,6 +67,10 @@
 }
 
 @media screen and (max-width: 770px) {
+  .cards__text {
+    margin: 40px auto 0;
+  }
+
   .cards__section {
     margin: 40px auto 0;
   }

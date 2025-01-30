@@ -23,17 +23,27 @@ export function getArticles() {
   });
 }
 
-export function saveArticle(article) {
+export function saveArticle(article, token, keyword) {
   return new Promise((resolve, reject) => {
     resolve({
       id: "65f7371e7bce9e7d331b11a0",
       title: article.title,
       description: article.description,
       urlToImage: article.urlToImage,
-      date: formattedDate,
+      date: article.date,
       keyword: keyword,
-      author: article.source.name,
+      author: article.source?.name,
       url: article.url,
     });
   });
 }
+
+export const unsaveArticle = (id, token) => {
+  return fetch(`${baseUrl}/articles/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};

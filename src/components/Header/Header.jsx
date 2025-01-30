@@ -11,6 +11,7 @@ const Header = ({
   setSearching,
   setIsLoading,
   setArticles,
+  hideMobileButtons,
 }) => {
   return (
     <header className="header">
@@ -19,6 +20,7 @@ const Header = ({
       handleLogin={handleLogin}
       isLoggedIn={isLoggedIn}
       handleLogout={handleLogout}
+      hideMobileButtons={hideMobileButtons}
        />
        <SearchForm
         handleSubmit={handleSubmit}

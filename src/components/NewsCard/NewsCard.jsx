@@ -8,6 +8,7 @@ const NewsCard = ({
   openPopup,
   handleSaveArticle,
   savedArticle,
+  handleUnsaveArticle, 
   keyword,
 }) => {
 
@@ -88,6 +89,12 @@ const NewsCard = ({
             ) : (
               <>
                 <button
+                onClick={(e) => {
+                  console.log("Unsave")
+                  handleUnsaveArticle({ article }, keyword);
+                  e.currentTarget.disabled = false;
+                  handleClick();
+                }}
                   disabled
                   className="card__bookmark-disabled"
                   onMouseOver={handleHover}

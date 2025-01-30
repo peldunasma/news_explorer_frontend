@@ -12,6 +12,7 @@ const Navigation = ({
   handleLogout,
   handleEditPopup,
   isSavedNews,
+  hideMobileButtons,
 }) => {
 
   const route = useLocation();
@@ -89,6 +90,7 @@ const Navigation = ({
             handleLogout={handleLogout}
             route={route}
             handleEditPopup={handleEditPopup}
+            hideMobileButtons={hideMobileButtons}
           />
         </div>
       </nav>
