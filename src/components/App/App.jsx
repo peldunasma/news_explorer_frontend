@@ -155,12 +155,12 @@ function App() {
       });
   };
 
-  const handleUnsaveArticle = (article) => {
+  const handleUnsaveArticle = (article, keyword) => {
     const token = localStorage.getItem("jwt");
-    unsaveArticle(article._id, token)
+    unsaveArticle(article, token)
       .then(() => {
         const postUnsave = savedArticles.filter((card) => {
-          return card._id !== article._id;
+          return card.id !== article.id;
         });
         setSavedArticles(postUnsave);
         handleClosePopup();

@@ -48,11 +48,13 @@ const NavigationMobile = ({
           >
             <div className="nav__dropdown-top">
               <h2 className="nav__mobile-title">NewsExplorer</h2>
-              <button
-                type="button"
-                className="nav__dropdown-close-button"
-                onClick={closeDropdown}
-              />
+              {!hideMobileButtons && (
+                <button
+                  type="button"
+                  className="nav__dropdown-close-button"
+                  onClick={closeDropdown}
+                />
+              )}
             </div>
             <div className="nav__mobile-buttons">
               <button type="text" className="nav__mobile-menu-button">
@@ -109,11 +111,16 @@ const NavigationMobile = ({
           >
             <div className="nav__dropdown-top">
               <h2 className="nav__mobile-title">NewsExplorer</h2>
-              <button
-                type="button"
-                className="nav__dropdown-close-button"
-                onClick={closeDropdown}
-              />
+
+              {hideMobileButtons ? (
+                ""
+              ) : (
+                <button
+                  type="button"
+                  className="nav__dropdown-close-button"
+                  onClick={closeDropdown}
+                />
+              )}
             </div>
             <div className="nav__mobile-buttons">
               <button type="text" className="nav__mobile-menu-button">
