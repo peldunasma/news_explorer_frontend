@@ -38,12 +38,17 @@ export function saveArticle(article, token, keyword) {
   });
 }
 
-export const unsaveArticle = (id, token) => {
-  return fetch(`${baseUrl}/articles/${id}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-      authorization: `Bearer ${token}`,
-    },
-  }).then(checkResponse);
-};
+export function unsaveArticle(article, token, keyword) {
+  return new Promise((resolve, reject) => {
+    resolve({
+      id: "65f7371e7bce9e7d331b11a0",
+      title: article.title,
+      description: article.description,
+      urlToImage: article.urlToImage,
+      date: article.date,
+      keyword: keyword,
+      author: article.source?.name,
+      url: article.url,
+    });
+  });
+}
