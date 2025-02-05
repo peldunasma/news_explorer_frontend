@@ -6,7 +6,6 @@
   .footer__content {
     display: flex;
     justify-content: space-between;
-    padding: 34px 106px;
     align-items: center;
   }
   
@@ -27,19 +26,19 @@
   .footer__content-list {
     list-style-type: none;
     display: flex;
-    gap: 42px;
+    gap: 41px;
     margin: 0;
   }
 
   .footer__content_text-container {
     display: flex;
-    gap: 30px;
+    gap: 31px;
     cursor: pointer;
   }
   
   .footer__content_social-container {
     display: flex;
-    gap: 24px;
+    gap: 23px;
     cursor: pointer;
   }
   

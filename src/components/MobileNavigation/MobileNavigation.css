@@ -1,26 +1,10 @@
-@keyframes dropDown {
-  0% {
-    transform: scaleY(0);
-  }
-  80% {
-    transform: scaleY(1.1);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
+
 
 .nav__mobile {
   position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
-  flex-direction: row;
   width: 100%;
-  max-height: 77px;
-  min-width: 320px;
   padding: 16px;
-  align-items: center;
   justify-content: space-between;
   border-bottom: 0.5px solid;
   border-color: rgba(255, 255, 255, 0.5);
@@ -39,10 +23,7 @@
 
 .nav__mobile-menu-button {
   text-align: left;
-  color: white;
   background: none;
-  border: none;
-  max-width: 120px;
   font-size: 18px;
   padding: 0;
   cursor: pointer;
@@ -51,8 +32,6 @@
 
 .nav__mobile-menu-button:hover {
   cursor: pointer;
-  opacity: 50%;
-  scale: 1.025;
 }
 
 .nav__mobile-button {
@@ -87,7 +66,7 @@
 .nav__mobile-buttons {
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 7px;
   margin: 25px 0 0;
   gap: 30px;
 }
@@ -99,7 +78,7 @@
   left: 0;
   z-index: 2;
   width: 100%;
-  height: 230px;
+  height: 231px;
   display: flex;
   flex-direction: column;
   visibility: hidden;
@@ -149,7 +128,6 @@
 .nav__mobile-button__logout:hover {
   opacity: 50%;
   cursor: pointer;
-  scale: 1.025;
 }
 
 .nav__mobile-button__logout-icon {

@@ -42,7 +42,7 @@ const NewsCard = ({
             <button
             onClick={(e) => {
               console.log("Unsave")
-              handleUnsaveArticle({ savedArticle }, keyword);
+              handleUnsaveArticle({ ...savedArticle }, keyword);
               e.currentTarget.disabled = true;
               handleClick();
             }}

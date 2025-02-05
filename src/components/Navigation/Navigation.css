@@ -43,8 +43,8 @@
 .nav__button-login {
   background: none;
   border: 1px solid;
-  border-radius: 24px;
-  width: 152px;
+  border-radius: 100px;
+  width: 176px;
   height: 48px;
   color: white;
   font-size: 18px;
@@ -55,29 +55,31 @@
 .nav__button-logout {
   background: none;
   border: 1px solid;
-  border-radius: 25px;
+  border-radius: 100px;
+  width: 112px; 
+  height: 48px;
   color: white;
   font-size: 18px;
-  padding: 13px 20px;
   cursor: pointer;
   font-family: "Roboto-500";
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 15px;
 }
 
 .nav__button-logout-saved {
   background: none;
   border: 1px solid;
-  border-radius: 25px;
+  border-radius: 100px;
+  width: 112px;
+  height: 48px;
   color: black;
   font-size: 18px;
-  padding: 13px 20px;
   cursor: pointer;
   font-family: "Roboto-500";
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 15px;
 }
 
 
@@ -111,6 +113,12 @@
 .nav__mobile-toggle {
   visibility: hidden;
   display: none;
+}
+
+@media screen and (max-width: 770px) {
+  .nav__button-login {
+    width: 152px;
+  }
 }
 
 @media screen and (max-width: 550px) {

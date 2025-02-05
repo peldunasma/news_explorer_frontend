@@ -1,10 +1,10 @@
-import "./NavigationMobile.css";
+import "./MobileNavigation.css";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import logout_light from "../../images/logout_white.svg";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 
-const NavigationMobile = ({
+const MobileNavigation = ({
   route,
   openPopup,
   isLoggedIn,
@@ -162,4 +162,4 @@ const NavigationMobile = ({
   );
 };
 
-export default NavigationMobile;
+export default MobileNavigation;
