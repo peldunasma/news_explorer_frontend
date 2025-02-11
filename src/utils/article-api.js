@@ -9,6 +9,7 @@ export function getArticles() {
         description: "Walmart store associates are now using body cameras in some locations as retailers look to deter theft and make employees safer.",
         source: "cnn",
         keyword: "some keyword",
+        url:  "https://image.cnbcfm.com/api/v1/image/108064301-1731935488675-gettyimages-2184732367-PWeaver-241117-08.jpeg?v=1734363857&w=1920&h=1080",
       },
       {
         id: "65f7371e7bce9e7d331b11a0",
@@ -18,6 +19,7 @@ export function getArticles() {
         description: "Autonomous, AI-based players are coming to a gaming experience near you, and a new startup, Altera, is joining the fray to build this new guard of AI Research company Altera raised $9 million to build AI agents that can play video games alongside other player…",
         source: "cnn",
         keyword: "some keyword",
+        url: "https://techcrunch.com/wp-content/uploads/2024/05/Minecraft-keyart.jpg?resize=1200,720",
       },
     ]);
   });
@@ -26,7 +28,7 @@ export function getArticles() {
 export function saveArticle(article, token, keyword) {
   return new Promise((resolve, reject) => {
     resolve({
-      id: "65f7371e7bce9e7d331b11a0",
+      id: Math.random().toString(),
       title: article.title,
       description: article.description,
       urlToImage: article.urlToImage,

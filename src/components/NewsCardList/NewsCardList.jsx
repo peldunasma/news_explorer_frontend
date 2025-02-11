@@ -52,8 +52,9 @@ const NewsCardList = ({
                 <div className="cards__list-container">
                   <ul className="cards__list">
                     {articles.slice(0, shownArticles).map((article, index) => {
+                      console.log(article.url)
                       return (
-                        <li className="cards__list-item" key={article.id}>
+                        <li className="cards__list-item" key={article.url}>
                           <NewsCard
                             article={article}
                             isLoggedIn={isLoggedIn}
@@ -89,11 +90,12 @@ const NewsCardList = ({
                   {savedArticles.map((savedArticle) => {
                     // Rendering current user saved cards
                     if (savedArticle.owner === currentUser._id) {
+                      console.log(savedArticle.url)
                       return (
-                        <li className="cards__list-item" key={savedArticle.id}>
+                        <li className="cards__list-item" key={savedArticle.url}>
                           <NewsCard
                             handleUnsaveArticle={handleUnsaveArticle}
-                            savedArticle={savedArticle}
+                            article={savedArticle}
                             isSavedNews={isSavedNews}
                             isLoggedIn={isLoggedIn}
                             handleConfirmPopup={handleConfirmPopup}

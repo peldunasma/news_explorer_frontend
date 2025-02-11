@@ -7,7 +7,6 @@ const NewsCard = ({
   isLoggedIn,
   openPopup,
   handleSaveArticle,
-  savedArticle,
   handleUnsaveArticle, 
   keyword,
 }) => {
@@ -42,7 +41,7 @@ const NewsCard = ({
             <button
             onClick={(e) => {
               console.log("Unsave")
-              handleUnsaveArticle({ ...savedArticle }, keyword);
+              handleUnsaveArticle(article, keyword);
               e.currentTarget.disabled = true;
               handleClick();
             }}
@@ -50,29 +49,29 @@ const NewsCard = ({
               type="button"
             />
             <div className="card__keyword-container">
-              <p className="card__keyword">{savedArticle.keyword}</p>
+              <p className="card__keyword">{article.keyword}</p>
             </div>
             <article className="card__content">
-              {savedArticle.urlToImage && (
+              {article.urlToImage && (
                 <img
                   className="card__image"
-                  src={savedArticle.urlToImage}
-                  alt={savedArticle.title}
+                  src={article.urlToImage}
+                  alt={article.title}
                 />
               )}
               <div className="card__text-container">
-                <p className="card__date">{savedArticle.date}</p>
+                <p className="card__date">{article.date}</p>
                 <h3 className="card__title">
                   <a
-                    href={savedArticle.url}
+                    href={article.url}
                   >
-                    {savedArticle.title}
+                    {article.title}
                   </a>
                 </h3>
                 <p className="card__text">
-                  {savedArticle.description}
+                  {article.description}
                 </p>
-                <p className="card__author">{savedArticle.author}</p>
+                <p className="card__author">{article.author}</p>
               </div>
             </article>
           </div>
