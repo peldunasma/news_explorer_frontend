@@ -23,7 +23,7 @@ const About = () => {
             became proficient in Git, which has been helpful for managing and
             collaborating on various projects within the program. I enjoyed my time at TripleTen,
             where I aquired new skills and the confidence to handle a wide range of
-            challenges. As a recent graduate, I am ready to take ona fulfilling and successful career!
+            challenges. As a recent graduate, I am ready to take on a fulfilling and successful career!
           </p>
         </div>
       </div>
