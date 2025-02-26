@@ -1,0 +1,60 @@
+
+.popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .popup_opened {
+    visibility: visible;
+  }
+  
+  .popup_content {
+    background-color: white;
+    width: 430px;
+    border-radius: 16px;
+    padding: 34px 36px;
+    position: relative;
+    height: 182px;
+  }
+  
+  .popup_close-button {
+    background: transparent url("../../images/close-button.svg") center no-repeat;
+    height: 40px;
+    position: absolute;
+    top: -43px;
+    right: -43px;
+    cursor: pointer;
+  }
+  
+  .popup_title {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    margin-left: 28px;
+  }
+  
+  .popup_form {
+    margin-left: 28px;
+  }
+  
+  .button_disabled {
+    background-color: #e6e8eb;
+    color: lightgrey;
+    cursor: not-allowed;
+  }
+  
+  .button_enabled {
+    background-color: #2f71e3;
+    color: white;
+  }
+  
+  .button_enabled:hover {
+    cursor: pointer;
+    background-color: #2f71e3;
+  }
