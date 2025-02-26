@@ -33,11 +33,11 @@ const RegisterModal = ({
       popupSwitch={switchToLogin}
       onSubmit={handleSubmit}
     >
-      <label className="modal__label">
+      <label className="modal_label">
         Email
         <input
           required
-          className="modal__input"
+          className="modal_input"
           type="text"
           name="email"
           minLength="1"
@@ -47,11 +47,11 @@ const RegisterModal = ({
           onChange={handleChange}
         />
       </label>
-      <label className="modal__label">
+      <label className="modal_label">
         Password
         <input
           required
-          className="modal__input"
+          className="modal_input"
           type="PASSWORD"
           name="password"
           minLength="1"
@@ -61,10 +61,10 @@ const RegisterModal = ({
           onChange={handleChange}
         />
       </label>
-      <label className="modal__label">
+      <label className="modal_label">
         Username
         <input
-          className="modal__input"
+          className="modal_input"
           type="text"
           name="username"
           minLength="1"
@@ -84,7 +84,7 @@ const RegisterModal = ({
       </button>
       ) : (
       <button 
-      className="modal__submit-button button_disabled" 
+      className="modal__submit-button button_disabled"
       type="submit"
       >
         Sign Up

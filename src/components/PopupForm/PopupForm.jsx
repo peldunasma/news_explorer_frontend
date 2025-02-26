@@ -10,17 +10,17 @@ const PopupForm = ({
   popupSwitch,
 }) => {
   return (
-    <div className={`popup ${name} ${isOpen ? " popup__opened" : ""}`}>
-      <div className="popup__content">
+    <div className={`popup ${name} ${isOpen ? " popup_opened" : ""}`}>
+      <div className="popup_content">
         <button 
-        className="popup__close-button"
+        className="popup_close-button"
         type="button" 
         onClick={onClose}
         />
-        <h3 className="popup__title">{title}</h3>
+        <h3 className="popup_title">{title}</h3>
         <form 
         onSubmit={onSubmit} 
-        className="popup__form"
+        className="popup_form"
         >
           {children}
             <>

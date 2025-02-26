@@ -11,26 +11,26 @@ const ModalWithForm = ({
   popupSwitch,
 }) => {
   return (
-    <div className={`modal modal_type_${name} ${isOpen ? " modal__opened" : ""}`}>
-      <div className="modal__content">
+    <div className={`modal modal_type_${name} ${isOpen ? " modal_opened" : ""}`}>
+      <div className="modal_content">
         <button 
-        className="modal__close-button"
+        className="modal_close-button"
         type="button" 
         onClick={onClose}
         />
-        <h3 className="modal__title">{title}</h3>
+        <h3 className="modal_title">{title}</h3>
         <form 
         onSubmit={onSubmit} 
-        className="modal__form"
+        className="modal_form"
         >
           {children}
-            <p className="modal__or-text">
+            <p className="modal_or-text">
             <>
               or
             <button
               onClick={popupSwitch}
               type="text"
-              className="modal__switch"
+              className="modal_switch"
             >
               {spanText}
               </button>

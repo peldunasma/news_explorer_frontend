@@ -6,7 +6,7 @@
 
 .preloader__text {
   font-size: 18px;
-  font-family: "Roboto-400", sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 24px auto 0;
   color: #b6bcbf;
 }
@@ -32,7 +32,7 @@
 
 .notfound__header {
   font-size: 26px;
-  font-family: "Roboto-Slab-400", serif;
+  font-family: "Roboto Slab", sans-serif;
   font-weight: 400;
   line-height: 30px;
   color: #1a1b22;
@@ -40,7 +40,7 @@
 
 .notfound__text {
   font-size: 18px;
-  font-family: "Roboto-400", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #b6bcbf;
 }
 

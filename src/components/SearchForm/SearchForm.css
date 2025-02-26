@@ -20,7 +20,8 @@
   width: 608px;
   line-height: 64px;
   margin: 0;
-  font-family: "Roboto-Slab-400", serif;
+  font-family: "Roboto Slab", sans-serif;
+  color: #FFFFFF;
 }
 
 .search__subtitle {
@@ -28,7 +29,8 @@
   font-weight: 400;
   line-height: 24px;
   margin: 32px auto 0;
-  font-family: "Roboto-400", sans-serif;
+  font-family: "Roboto", sans-serif;
+  color: #FFFFFF;
 }
 
 .search__form-container {
@@ -38,11 +40,10 @@
 }
 
 .search__form {
-  font-family: "Roboto-400", sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   margin: 0;
   display: flex;
   justify-content: center;
-  padding-right: 10px;
 }
 
 .search__form-fieldset {
@@ -51,6 +52,7 @@
   padding: 0;
   margin: 0;
   min-width: 320px;
+  font-family: "Roboto", sans-serif;
 }
 
 .search__form-input {
@@ -61,7 +63,8 @@
   padding: 21px;
   border: none;
   border-radius: 51px;
-  outline: none;
+  outline: none; 
+  background-color: white;
 }
 
 .search__submit-button {
@@ -123,11 +126,6 @@
 }
 
 @media screen and (max-width: 550px) {
-  .search__form-fieldset {
-    width: 100vw;
-    margin-left: 40px;
-  }
-
   .search__form-container {
     margin: 100px 0 0;
   }
@@ -138,10 +136,11 @@
 
   .search__form-input {
     width: 250px;
+    margin: 0px 20px 0px;
   }
 
   .search__submit-button {
     width: 288px;
-    margin: 80px 0 0;
+    margin: 80px 20px 0;
   }
 }

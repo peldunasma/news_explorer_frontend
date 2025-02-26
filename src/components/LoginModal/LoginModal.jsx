@@ -32,10 +32,10 @@ const LoginModal = ({
       popupSwitch={switchToSignup}
       onSubmit={handleSubmit}
     >
-      <label className="modal__label">
+      <label className="modal_label">
         Email
         <input
-          className="modal__input"
+          className="modal_input"
           type="email"
           name="email"
           minLength="1"
@@ -45,10 +45,10 @@ const LoginModal = ({
           onChange={handleChange}
         />
       </label>
-      <label className="modal__label">
+      <label className="modal_label">
         Password
         <input
-          className="modal__input"
+          className="modal_input"
           type="PASSWORD"
           name="password"
           minLength="1"

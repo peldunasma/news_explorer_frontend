@@ -1,10 +1,10 @@
-import "./MobileNavigation.css";
+import "./NavigationMobile.css";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import logout_light from "../../images/logout_white.svg";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 
-const MobileNavigation = ({
+const NavigationMobile = ({
   route,
   openPopup,
   isLoggedIn,
@@ -56,7 +56,7 @@ const MobileNavigation = ({
                 />
               )}
             </div>
-            <div className="nav__mobile-buttons">
+            <div className="nav__mobile-button">
               <button type="text" className="nav__mobile-menu-button">
                 <Link to="/" style={{ textDecoration: "none", color: "white" }}>
                   Home
@@ -162,4 +162,4 @@ const MobileNavigation = ({
   );
 };
 
-export default MobileNavigation;
+export default NavigationMobile;

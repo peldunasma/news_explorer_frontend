@@ -16,7 +16,7 @@
 
 .saved__text-subtitle {
   font-size: 18px;
-  font-family: "Roboto-400", sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 24px;
   color: black;
   margin: 0;
@@ -25,14 +25,14 @@
 .saved__text-title {
   font-size: 40px;
   max-width: 530px;
-  font-family: "Roboto-Slab-400", serif;
+  font-family: "Roboto Slab", sans-serif;
   color: black;
   line-height: 46px;
   margin: 29px 0 0;
 }
 
 .saved__text-keywords {
-  font-family: "Roboto-400", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   line-height: 24px;
   color: black;
@@ -40,7 +40,7 @@
 }
 
 .saved__text-keyword {
-  font-family: "Roboto-700", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   line-height: 24px;
   color: #1a1b22;
@@ -50,7 +50,7 @@
   .saved__text-title {
     font-size: 30px;
     max-width: 288px;
-    font-family: "Roboto-Slab-400", serif;
+    font-family: "Roboto Slab", sans-serif;
     color: black;
     line-height: 34px;
     margin: 29px 0 0;

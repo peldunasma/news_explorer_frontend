@@ -11,11 +11,11 @@
     background-color: rgba(0, 0, 0, 0.5);
   }
   
-  .popup__opened {
+  .popup_opened {
     visibility: visible;
   }
   
-  .popup__content {
+  .popup_content {
     background-color: white;
     width: 430px;
     border-radius: 16px;
@@ -24,7 +24,7 @@
     height: 182px;
   }
   
-  .popup__close-button {
+  .popup_close-button {
     background: transparent url("../../images/close-button.svg") center no-repeat;
     height: 40px;
     position: absolute;
@@ -33,13 +33,13 @@
     cursor: pointer;
   }
   
-  .popup__title {
-    font-family: "Roboto-400", Arial, sans-serif;
+  .popup_title {
+    font-family: "Roboto", sans-serif;
     font-size: 24px;
     margin-left: 28px;
   }
   
-  .popup__form {
+  .popup_form {
     margin-left: 28px;
   }
   

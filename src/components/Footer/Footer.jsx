@@ -21,6 +21,7 @@ const Footer = () => {
                 <a
                   href="https://tripleten.com"
                   style={{ color: "black" }}
+                  target="_blank" 
                   >
                 <li className="footer__content_list-text">TripleTen</li>
                 </a>
@@ -28,11 +29,13 @@ const Footer = () => {
               <div className="footer__content_social-container">
               <a
                   href="https://github.com/peldunasma"
+                  target="_blank" 
                 >
                 <img src={github} alt="github" className="footer__content_list-img" />
                 </a>
                 <a
                   href="https://facebook.com"
+                  target="_blank" 
                 >
                 <img src={facebook} alt="facebook" className="footer__content_list-img" />
                 </a>

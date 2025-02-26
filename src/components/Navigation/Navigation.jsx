@@ -4,7 +4,7 @@ import logout_white from "../../images/logout_white.svg";
 import { CurrentUserContext } from "../../context/CurrentUserContext";
 import { useContext } from "react";
 import NavigationSaved from "../NavigationSaved/NavigationSaved";
-import MobileNavigation from "../MobileNavigation/MobileNavigation";
+import NavigationMobile from "../NavigationMobile/NavigationMobile";
 
 const Navigation = ({
   handleLogin,
@@ -83,7 +83,7 @@ const Navigation = ({
           />
         )}
         <div className="nav__mobile-toggle">
-          <MobileNavigation
+          <NavigationMobile
             openPopup={handleLogin}
             isSavedNews={isSavedNews}
             isLoggedIn={isLoggedIn}

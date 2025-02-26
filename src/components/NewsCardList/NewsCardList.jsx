@@ -37,7 +37,6 @@ const NewsCardList = ({
             ) : null}
             {searching ? (
               <section className="cards">
-                <h3 className="cards__text">Search results</h3>
                 {isLoading ? (
                   <>
                     <Preloader />
@@ -47,7 +46,7 @@ const NewsCardList = ({
                   <>
                     <NotFound />
                   </>
-                ) : null}
+                ) : <h3 className="cards__text">Search results</h3>}
                 {/* Rendering cards when searching */}
                 <div className="cards__list-container">
                   <ul className="cards__list">
