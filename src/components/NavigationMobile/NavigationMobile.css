@@ -159,6 +159,27 @@
     max-width: 535px;
   }
 
+  .nav__mobile-menu-button {
+    text-align: left;
+    background: none;
+    font-size: 18px;
+    padding: 0;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    margin-left: 15px;
+    margin-bottom: 20px
+}
+
+  .nav__mobile-button__logout {
+    border: 1px solid #fff;
+    font-size: 18px;
+    height: 48px;
+    margin-left: 15px;
+    padding: 6px 25px 6px 10px;
+    width: 112px;
+    margin-top: 15px;
+  }
+
   .nav__mobile-button-dark {
     margin-right: 35px; 
 }

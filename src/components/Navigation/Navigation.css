@@ -24,13 +24,13 @@
 
 .nav__title {
   font-size: 20px;
-  color: white;
+  color: #FFFFFF;
   font-family: "Roboto Slab", sans-serif;
   margin: 0;
 }
 
 .nav__button-home {
-  color: white;
+  color: #FFFFFF;
   background: none;
   cursor: pointer;
   font-size: 18px;
@@ -46,7 +46,7 @@
   border-radius: 100px;
   width: 176px;
   height: 48px;
-  color: white;
+  color: #FFFFFF;
   font-size: 18px;
   cursor: pointer;
   font-family: "Roboto", sans-serif;
@@ -58,7 +58,7 @@
   border-radius: 100px;
   width: 112px; 
   height: 48px;
-  color: white;
+  color: #FFFFFF;
   font-size: 18px;
   cursor: pointer;
   font-family: "Roboto", sans-serif;

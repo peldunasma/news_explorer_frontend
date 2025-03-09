@@ -56,7 +56,7 @@ const NavigationMobile = ({
                 />
               )}
             </div>
-            <div className="nav__mobile-button">
+            <div className="nav__mobile-buttons">
               <button type="text" className="nav__mobile-menu-button">
                 <Link to="/" style={{ textDecoration: "none", color: "white" }}>
                   Home

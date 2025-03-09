@@ -60,11 +60,11 @@ const LoginModal = ({
         />
       </label>
       {isValid ? (
-        <button className="modal__submit-button button_enabled" type="submit">
+        <button className="modal_submit-button button_enabled" type="submit">
           Sign In
         </button>
       ) : (
-        <button className="modal__submit-button button_disabled" type="submit">
+        <button className="modal_submit-button button_disabled" type="submit">
           Sign In
         </button>
       )}

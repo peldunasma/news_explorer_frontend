@@ -6,14 +6,12 @@
 }
 
 .cards__text {
-  width: 712px;
-  height: 46px;
   font-family: "Roboto Slab";
   font-size: 40px;
   font-weight: 400;
   line-height: 46px;
   text-align: left;
-  margin-left: 100px; 
+  margin-left: 100px;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
 }
@@ -69,7 +67,9 @@
 
 @media screen and (max-width: 770px) {
   .cards__text {
-    margin: 40px auto 0;
+    margin: 40px auto;
+    font-size: 30px;
+    font-weight: 400px;
   }
 
   .cards__section {
