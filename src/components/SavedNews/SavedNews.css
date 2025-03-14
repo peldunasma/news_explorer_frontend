@@ -11,7 +11,6 @@
 
 .saved__text-container {
   margin: 40px 0 40px 50px;
-  min-width: 320px;
 }
 
 .saved__text-subtitle {
@@ -56,9 +55,9 @@
     margin: 29px 0 0;
   }
   .saved__text-container {
-    justify-content: center;
-    margin: 10px auto 32px;
-    padding: 0 16px 0;
+   margin-left: 16px;
+   margin-top: 0px;
+   margin-bottom: 0px; 
   }
   .saved__text-subtitle {
     font-size: 12px;

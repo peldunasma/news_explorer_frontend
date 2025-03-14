@@ -13,9 +13,11 @@ const NavigationSaved = ({ handleLogout, handleEditPopup }) => {
         className="nav__content"
         style={{ borderBottom: "0.5px solid", borderColor: "black" }}
       >
+        <Link to="/">
         <h2 className="nav__title" style={{ color: "black" }}>
           NewsExplorer
         </h2>
+        </Link>
         <div className="nav__buttons">
           <button type="text" className="nav__button-home">
             <Link to="/" style={{ color: "black" }}>

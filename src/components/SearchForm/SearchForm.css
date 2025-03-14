@@ -51,7 +51,6 @@
   position: relative;
   padding: 0;
   margin: 0;
-  min-width: 320px;
   font-family: "Roboto", sans-serif;
 }
 
@@ -132,6 +131,7 @@
 
   .search__title {
     width: 100%;
+    margin-top: 20px;
   }
 
   .search__form-input {
@@ -148,6 +148,7 @@
   .search__form-fieldset {
    width: 288px;
    height: 128px;
+   padding-right: 16px; 
   }
 }
 

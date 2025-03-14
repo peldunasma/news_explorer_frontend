@@ -1,7 +1,7 @@
 
 
 .nav__mobile {
-  position: absolute;
+  position: relative;
   display: flex;
   box-sizing:border-box;
   width: 100%;
@@ -110,7 +110,7 @@
   padding: 16px;
 }
 
-.nav__mobile-button__logout {
+.nav__mobile-logout-button {
   background: none;
   border: 1px solid;
   border-radius: 25px;
@@ -126,12 +126,12 @@
   height: 48px;
 }
 
-.nav__mobile-button__logout:hover {
+.nav__mobile-logout-button:hover {
   opacity: 50%;
   cursor: pointer;
 }
 
-.nav__mobile-button__logout-icon {
+.nav__mobile-icon-button {
   width: 20px;
   height: 20px;
 }
@@ -154,12 +154,12 @@
 
 @media screen and (max-width: 550px) {
 
-  .nav__dropdown {
+.nav__dropdown {
     width: 100%;
     max-width: 535px;
   }
 
-  .nav__mobile-menu-button {
+.nav__mobile-menu-button {
     text-align: left;
     background: none;
     font-size: 18px;
@@ -170,7 +170,7 @@
     margin-bottom: 20px
 }
 
-  .nav__mobile-button__logout {
+.nav__mobile-logout-button {
     border: 1px solid #fff;
     font-size: 18px;
     height: 48px;
@@ -180,7 +180,7 @@
     margin-top: 15px;
   }
 
-  .nav__mobile-button-dark {
+.nav__mobile-button-dark {
     margin-right: 35px; 
 }
 

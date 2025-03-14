@@ -10,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative; 
 }
 
 .nav__buttons {
@@ -38,6 +39,7 @@
   width: 49px;
   font-family: "Roboto", sans-serif;
   border: none;
+  position: relative;
 }
 
 .nav__button-login {

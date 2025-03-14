@@ -67,7 +67,7 @@ const NewsCardList = ({
                   </ul>
                 </div>
                 <div className="cards__button-container">
-                  {articles.length === 100 ? null : (
+                  {articles.length < 3 ? null : (
                     <button
                       type="text"
                       className="cards__button"

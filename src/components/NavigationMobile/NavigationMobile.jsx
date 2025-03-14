@@ -29,9 +29,11 @@ const NavigationMobile = ({
       {/* Mobile menu */}
       {isLoggedIn ? (
         <>
+        <Link to="/">
           <h2 className={`nav__mobile-title ${isSavedNews ? "nav_saved" : ""}`}>
             NewsExplorer
           </h2>
+          </Link>
           <button
             onClick={handleDropdown}
             type="button"
@@ -47,7 +49,9 @@ const NavigationMobile = ({
             }`}
           >
             <div className="nav__dropdown-top">
+              <Link to="/">
               <h2 className="nav__mobile-title">NewsExplorer</h2>
+              </Link>
               {!hideMobileButtons && (
                 <button
                   type="button"
@@ -72,7 +76,7 @@ const NavigationMobile = ({
               </button>
               <button
                 type="text"
-                className="nav__mobile-button__logout"
+                className="nav__mobile-logout-button"
                 onClick={() => {
                   handleLogout();
                   closeDropdown();
@@ -81,7 +85,7 @@ const NavigationMobile = ({
                 {currentUser?.name}
                 <img
                   src={logout_light}
-                  className="nav__mobile-button__logout-icon"
+                  className="nav__mobile-icon-button"
                 />
               </button>
             </div>
@@ -90,6 +94,7 @@ const NavigationMobile = ({
       ) : (
         // Mobile menu for logged in user/saved news route
         <>
+        <Link to="/">
           <h2
             className={`nav__mobile-title ${
               route.pathname === "/saved-news" ? "nav_saved" : ""
@@ -97,6 +102,7 @@ const NavigationMobile = ({
           >
             NewsExplorer
           </h2>
+          </Link>
           <button
             onClick={handleDropdown}
             type="button"
@@ -110,8 +116,9 @@ const NavigationMobile = ({
             }`}
           >
             <div className="nav__dropdown-top">
+              <Link to="/">
               <h2 className="nav__mobile-title">NewsExplorer</h2>
-
+              </Link>
               {hideMobileButtons ? (
                 ""
               ) : (

@@ -3,7 +3,7 @@ import aboutlogo from "../../images/aboutlogo.jpg";
 
 const About = () => {
   return (
-    <div className="about">
+    <section className="about">
       <div className="about__content">
         <div className="about__image">
           <img
@@ -27,7 +27,7 @@ const About = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
