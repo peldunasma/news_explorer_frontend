@@ -197,8 +197,8 @@
 @media screen and (max-width: 320px) {
 
   .nav__dropdown {
-    width: 100%;
-    max-width: 320px;
+    /* width: 100%; */
+    /* max-width: 320px; */
   }
 
 }
