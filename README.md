@@ -6,6 +6,10 @@ Runs the app in the development mode. Open http://localhost:3000 to view it in y
 📖 About This Project
 This app was built as part of my TripleTen final project. It is a React-based News Explorer application that allows users to search for and save news articles using the News API.
 
+🚀 Live Demo
+You can view the deployed project here:
+👉 https://peldunasma.github.io/news_explorer_frontend/
+
 Features:
 🔎 Search for news articles by keyword
 📌 Save and delete favorite articles by authentication
