@@ -77,14 +77,14 @@ const RegisterModal = ({
       </label>
       {isValid ? (
       <button 
-      className="modal_submit-button button_enabled" 
+      className="modal_submit-button-enabled" 
       type="submit"
       >
         Sign Up
       </button>
       ) : (
       <button 
-      className="modal_submit-button button_disabled"
+      className="modal_submit-button-disabled"
       type="submit"
       >
         Sign Up

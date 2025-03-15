@@ -1,9 +1,7 @@
-
-
 .nav__mobile {
   position: relative;
   display: flex;
-  box-sizing:border-box;
+  box-sizing: border-box;
   width: 100%;
   padding: 16px;
   justify-content: space-between;
@@ -153,13 +151,12 @@
 }
 
 @media screen and (max-width: 550px) {
-
-.nav__dropdown {
+  .nav__dropdown {
     width: 100%;
     max-width: 535px;
   }
 
-.nav__mobile-menu-button {
+  .nav__mobile-menu-button {
     text-align: left;
     background: none;
     font-size: 18px;
@@ -167,10 +164,10 @@
     cursor: pointer;
     font-family: "Roboto", sans-serif;
     margin-left: 15px;
-    margin-bottom: 20px
-}
+    margin-bottom: 20px;
+  }
 
-.nav__mobile-logout-button {
+  .nav__mobile-logout-button {
     border: 1px solid #fff;
     font-size: 18px;
     height: 48px;
@@ -180,25 +177,11 @@
     margin-top: 15px;
   }
 
-.nav__mobile-button-dark {
-    margin-right: 35px; 
-}
-
-.nav__mobile-button {
-  margin-right: 5px; 
-}
-
-.nav__dropdown-close-button{
-  margin-right: 5px; 
-}
-
-}
-
-@media screen and (max-width: 320px) {
-
-  .nav__dropdown {
-    /* width: 100%; */
-    /* max-width: 320px; */
+  .nav__mobile-button {
+    margin-right: 5px;
   }
 
+  .nav__dropdown-close-button {
+    margin-right: 5px;
+  }
 }
