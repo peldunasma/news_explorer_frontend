@@ -68,8 +68,8 @@
 @media screen and (max-width: 770px) {
   .cards__text {
     margin: 40px auto;
+    margin-left: 30px;
     font-size: 30px;
-    font-weight: 400px;
   }
 
   .cards__section {

@@ -147,8 +147,7 @@
 @media screen and (max-width: 320px) {
   .search__form-fieldset {
    width: 288px;
-   height: 128px;
-   padding-right: 16px; 
+   height: 128px; 
   }
 }
 
