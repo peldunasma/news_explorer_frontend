@@ -1,0 +1,18 @@
+.header {
+    min-height: 576px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('../../images/header_background.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media screen and (max-width: 770px) {
+    .header {
+      height: 400px;
+    }
+  }
+  
+  @media screen and (max-width: 550px) {
+    .header {
+      height: 536px;
+    }
+  }
