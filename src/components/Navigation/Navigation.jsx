@@ -17,6 +17,7 @@ const Navigation = ({
 
   const route = useLocation();
   const currentUser = useContext(CurrentUserContext);
+  const location = useLocation();
 
   return (
     <>
@@ -31,9 +32,16 @@ const Navigation = ({
             {isLoggedIn ? (
               <>
                 <div className="nav__buttons">
+                  <Link
+                   to="/"
+                   className={`nav__link ${
+                     location.pathname === "/" ? "active nav__link_home" : ""
+                   }`}
+                 >
                   <button type="text" className="nav__button-home">
                     Home
                   </button>
+                  </Link>
                   <hr className="nav__outline" />
                   <button type="text" className="nav__button-saved">
                     <Link

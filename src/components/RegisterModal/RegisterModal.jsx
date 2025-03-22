@@ -29,7 +29,7 @@ const RegisterModal = ({
       onClose={handleCloseModal}
       isOpen={isOpen}
       className="register"
-      spanText="Sign In"
+      spanText="Sign in"
       popupSwitch={switchToLogin}
       onSubmit={handleSubmit}
     >
@@ -77,14 +77,14 @@ const RegisterModal = ({
       </label>
       {isValid ? (
       <button 
-      className="modal_submit-button-enabled" 
+      className="modal__submit-button modal__submit-button_enabled" 
       type="submit"
       >
         Sign Up
       </button>
       ) : (
       <button 
-      className="modal_submit-button-disabled"
+      className="modal__submit-button modal__submit-button_disabled"
       type="submit"
       >
         Sign Up

@@ -23,7 +23,7 @@ const LoginModal = ({
 
   return (
     <ModalWithForm
-      title="Sign In"
+      title="Sign in"
       buttonText="Sign In"
       onClose={handleCloseModal}
       isOpen={isOpen}
@@ -60,11 +60,11 @@ const LoginModal = ({
         />
       </label>
       {isValid ? (
-        <button className="modal_submit-button-enabled" type="submit">
+        <button className="modal__submit-button modal__submit-button_enabled" type="submit">
           Sign In
         </button>
       ) : (
-        <button className="modal_submit-button-disabled" type="submit">
+        <button className="modal__submit-button modal__submit-button_disabled" type="submit">
           Sign In
         </button>
       )}

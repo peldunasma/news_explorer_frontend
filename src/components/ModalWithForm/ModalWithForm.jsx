@@ -24,7 +24,7 @@ const ModalWithForm = ({
         className="modal_form"
         >
           {children}
-            <p className="modal_or-text">
+            <div className="modal_or-text">
             <>
               or
             <button
@@ -35,7 +35,7 @@ const ModalWithForm = ({
               {spanText}
               </button>
               </>
-            </p>
+            </div>
         </form>
       </div>
     </div>

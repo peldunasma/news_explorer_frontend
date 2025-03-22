@@ -1,6 +1,7 @@
 .nav {
   border-bottom: 0.3px solid;
   border-color: rgba(255, 255, 255, 0.4);
+  position: relative
 }
 
 .nav__content {
@@ -58,7 +59,7 @@
   background: none;
   border: 1px solid;
   border-radius: 100px;
-  width: 112px; 
+  width: 100px; 
   height: 48px;
   color: #FFFFFF;
   font-size: 18px;
@@ -73,7 +74,7 @@
   background: none;
   border: 1px solid;
   border-radius: 100px;
-  width: 112px;
+  width: 100px;
   height: 48px;
   color: black;
   font-size: 18px;

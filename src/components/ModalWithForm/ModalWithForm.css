@@ -45,7 +45,7 @@
   margin-right: 28px;
 }
 
-.modal_submit-button-disabled {
+.modal__submit-button_disabled {
   width: 100%;
   border-radius: 25px;
   height: 64px;
@@ -55,7 +55,7 @@
   cursor: not-allowed;
 }
 
-.modal_submit-button-enabled {
+.modal__submit-button_enabled {
   width: 100%;
   border-radius: 25px;
   height: 64px;
@@ -64,30 +64,29 @@
   color: white;
 }
 
-.modal_submit-button-enabled:hover {
+.modal__submit-button_enabled:hover {
   cursor: pointer;
   background-color: #347eff;
 }
 
 .modal_label {
-  display: flex;
-  flex-direction: column;
-  color: #2f71e5;
   font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  line-height: 20px;
-  gap: 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.52px;
+  text-align: left;
+  color: #2f71e5;
 }
 
 .modal_input {
-  border: none;
-  border-bottom: 1px solid #000;
   display: block;
   margin: 3px 0 31px;
-  padding-bottom: 11px;
-  padding-top: 8px;
+  border: none;
+  border-bottom: 1px solid #000;
   width: 100%;
+  padding-top: 8px;
+  padding-bottom: 11px;
+  font-size: 14px;
 }
 
 .modal_or-text {
@@ -158,7 +157,7 @@
   height: auto;
 }
 
-.modal_submit-button-disabled {
+.modal__submit-button_disabled {
   font-size: 16px;
   padding: 14px 79px;
 }
@@ -175,7 +174,7 @@
     top: 65px; 
   }
 
-  .modal_submit-button-disabled {
+  .modal__submit-button_disabled {
     font-size: 16px;
     padding: 14px 60px;
   }
